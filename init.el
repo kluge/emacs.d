@@ -1,7 +1,8 @@
 
-;; Disable menu, tool bars and splash screen
+;; Disable extraneous GUI
 (menu-bar-mode -1)
 (tool-bar-mode -1)
+(scroll-bar-mode -1)
 (setq inhibit-startup-message t)
 
 ;; Set font size
@@ -23,15 +24,21 @@
   (when (not (package-installed-p p))
     (package-install p)))
 
-;; Evil (Extensible Vi Layer)
-(evil-mode 1)
-
-;; Settings
-(show-paren-mode 1)	; highlight matching parenthesis
-(global-hl-line-mode 1) ; highlight current line
-
-; Put backup files in a special directory
+;; Put backup files in a special directory
 (setq backup-directory-alist '((".*" . "~/.emacs-backups")))
-; Put all auto-save files to /tmp
+;; Put all auto-save files to /tmp
 (setq auto-save-file-name-transforms
           `((".*" ,temporary-file-directory t)))
+
+;; Visual settings
+(show-paren-mode 1)	; highlight matching parenthesis
+(global-hl-line-mode 1) ; highlight current line
+(line-number-mode 1)    ; show line number in modeline
+(column-number-mode 1)	; show column number in modeline
+(global-linum-mode 1)   ; show line numbers
+
+;; Code settings
+(setq indent-tabs-mode nil) ; use spaces to indent
+
+;; Evil (Extensible Vi Layer)
+(evil-mode 1)
