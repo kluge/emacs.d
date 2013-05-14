@@ -1,9 +1,13 @@
 
-; Disable menu and tool bars
+;; Disable menu, tool bars and splash screen
 (menu-bar-mode -1)
 (tool-bar-mode -1)
+(setq inhibit-startup-message t)
 
-; Set up the package system
+;; Set font size
+(set-face-attribute 'default nil :height 85)
+
+;; Set up the package system
 (require 'package)
 (add-to-list 'package-archives
 	     '("marmalade" . "http://marmalade-repo.org/packages/") t)
@@ -12,15 +16,22 @@
 (when (not package-archive-contents)
   (package-refresh-contents))
 
-; Install the packages, if they're not already installed
+;; Install the packages, if they're not already installed
 (defvar my-packages '(evil))
 
 (dolist (p my-packages)
   (when (not (package-installed-p p))
     (package-install p)))
 
-; Evil (Extensible Vi Layer)
+;; Evil (Extensible Vi Layer)
 (evil-mode 1)
 
-; Settings
-(show-paren-mode 1) ; highlight matching parenthesis
+;; Settings
+(show-paren-mode 1)	; highlight matching parenthesis
+(global-hl-line-mode 1) ; highlight current line
+
+; Put backup files in a special directory
+(setq backup-directory-alist '((".*" . "~/.emacs-backups")))
+; Put all auto-save files to /tmp
+(setq auto-save-file-name-transforms
+          `((".*" ,temporary-file-directory t)))
