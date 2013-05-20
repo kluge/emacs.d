@@ -21,9 +21,12 @@
 
 ;; Install the packages, if they're not already installed
 (defvar my-packages
-  '(evil
+  '(auto-complete
+    epc
+    evil
     ghc
     haskell-mode
+    jedi
     rainbow-mode
     scala-mode2
     ))
@@ -43,7 +46,7 @@
 (global-hl-line-mode 1) ; highlight current line
 (line-number-mode 1)    ; show line number in modeline
 (column-number-mode 1)	; show column number in modeline
-(global-linum-mode 1)   ; show line numbers
+(global-linum-mode -1)  ; don't show line numbers
 
 ;; Use Peakburn color theme
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
@@ -54,4 +57,16 @@
 
 ;; Evil (Extensible Vi Layer)
 (evil-mode 1)
+
+;; Auto Complete
+(require 'auto-complete-config)
+(add-to-list 'ac-dictionary-directories "~/.emacs.d/dict")
+(ac-config-default)
+(global-auto-complete-mode t)
+
+;; Jedi
+(autoload 'jedi:ac-setup "jedi" nil t)
+; Provide auto completion in python-mode
+(add-hook 'python-mode-hook 'auto-complete-mode)
+(add-hook 'python-mode-hook 'jedi:ac-setup)
 
