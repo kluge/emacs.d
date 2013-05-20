@@ -45,13 +45,13 @@
 (column-number-mode 1)	; show column number in modeline
 (global-linum-mode 1)   ; show line numbers
 
+;; Use Peakburn color theme
+(add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
+(load-theme 'peakburn t)
+
 ;; Code settings
 (setq indent-tabs-mode nil) ; use spaces to indent
 
 ;; Evil (Extensible Vi Layer)
 (evil-mode 1)
-
-;; Use Peakburn color theme
-(add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
-(load-theme 'peakburn t)
 
