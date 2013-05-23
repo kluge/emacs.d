@@ -58,7 +58,9 @@
     ("peakburn-green+3"  . "#60D080")
     ("peakburn-green+4"  . "#60F080")
     ("peakburn-puregreen" . "#00F000")
+    ("peakburn-cyan-1"   . "#50B0D0")
     ("peakburn-cyan"     . "#80C0E0")
+    ("peakburn-blue+2"   . "#A0D0FF")
     ("peakburn-blue+1"   . "#7090FF")
     ("peakburn-blue"     . "#6080F0")
     ("peakburn-blue-1"   . "#5070E0")
@@ -66,7 +68,8 @@
     ("peakburn-blue-3"   . "#3050C0")
     ("peakburn-blue-4"   . "#2040B0")
     ("peakburn-blue-5"   . "#1030A0")
-    ("peakburn-magenta"  . "#800080"))
+    ("peakburn-magenta"  . "#800080")
+    ("peakburn-pink"     . "#F0C0F0"))
   "List of Peakburn colors.
 Each element has the form (NAME . HEX).
 
@@ -93,13 +96,13 @@ Also bind `class' to ((class color) (min-colors 89))."
    `(link ((t (:foreground ,peakburn-yellow :underline t :weight bold))))
    `(link-visited ((t (:foreground ,peakburn-yellow-2 :underline t :weight normal))))
    `(default ((t (:foreground ,peakburn-fg :background ,peakburn-bg))))
-   `(cursor ((t (:foreground ,peakburn-fg :background "green"))))
+   `(cursor ((t (:foreground ,peakburn-fg :background ,peakburn-puregreen))))
    `(escape-glyph ((t (:foreground ,peakburn-yellow :bold t))))
    `(fringe ((t (:foreground ,peakburn-fg :background ,peakburn-bg+1))))
    `(header-line ((t (:foreground ,peakburn-yellow
                                   :background ,peakburn-bg-1
                                   :box (:line-width -1 :style released-button)))))
-   `(highlight ((t (:background ,peakburn-bg-05))))
+   `(highlight ((t (:background ,peakburn-bg+1))))
    `(success ((t (:foreground ,peakburn-green :weight bold))))
    `(warning ((t (:foreground ,peakburn-orange :weight bold))))
 ;;;;; compilation
@@ -111,7 +114,7 @@ Also bind `class' to ((class color) (min-colors 89))."
    `(compilation-info ((t (:foreground ,peakburn-green+4 :underline t))))
    `(compilation-leave-directory-face ((t (:foreground ,peakburn-green))))
    `(compilation-line-face ((t (:foreground ,peakburn-yellow))))
-   `(compilation-line-number ((t (:foreground ,peakburn-yellow))))
+   `(compilation-line-number ((t (:foreground ,peakburn-fg-1))))
    `(compilation-message-face ((t (:foreground ,peakburn-blue))))
    `(compilation-warning-face ((t (:foreground ,peakburn-orange :weight bold :underline t))))
    `(compilation-mode-line-exit ((t (:foreground ,peakburn-green+2 :weight bold))))
@@ -135,31 +138,31 @@ Also bind `class' to ((class color) (min-colors 89))."
                            :background ,peakburn-bg-1
                            :box (:line-width -1 :style released-button)))
       (t :inverse-video t)))
-   `(mode-line-buffer-id ((t (:foreground ,peakburn-yellow :weight bold))))
+   `(mode-line-buffer-id ((t (:foreground ,peakburn-green+1 :weight bold))))
    `(mode-line-inactive
      ((t (:foreground ,peakburn-green-1
                       :background ,peakburn-bg-05
                       :box (:line-width -1 :style released-button)))))
-   `(region ((,class (:background ,peakburn-bg-1))
+   `(region ((,class (:background ,peakburn-bg+3))
              (t :inverse-video t)))
    `(secondary-selection ((t (:background ,peakburn-bg+2))))
    `(trailing-whitespace ((t (:background ,peakburn-red))))
    `(vertical-border ((t (:foreground ,peakburn-fg))))
 ;;;;; font lock
-   `(font-lock-builtin-face ((t (:foreground ,peakburn-cyan))))
-   `(font-lock-comment-face ((t (:foreground ,peakburn-green))))
-   `(font-lock-comment-delimiter-face ((t (:foreground ,peakburn-green))))
-   `(font-lock-constant-face ((t (:foreground ,peakburn-green+4))))
+   `(font-lock-builtin-face ((t (:foreground ,peakburn-cyan-1))))
+   `(font-lock-comment-face ((t (:foreground ,peakburn-yellow))))
+   `(font-lock-comment-delimiter-face ((t (:foreground ,peakburn-yellow-1))))
+   `(font-lock-constant-face ((t (:foreground ,peakburn-cyan))))
    `(font-lock-doc-face ((t (:foreground ,peakburn-green+1))))
    `(font-lock-doc-string-face ((t (:foreground ,peakburn-blue-2))))
    `(font-lock-function-name-face ((t (:foreground ,peakburn-blue))))
-   `(font-lock-keyword-face ((t (:foreground ,peakburn-yellow :weight bold))))
+   `(font-lock-keyword-face ((t (:foreground ,peakburn-blue+2 :weight bold))))
    `(font-lock-negation-char-face ((t (:foreground ,peakburn-fg))))
    `(font-lock-preprocessor-face ((t (:foreground ,peakburn-blue+1))))
-   `(font-lock-string-face ((t (:foreground ,peakburn-red))))
+   `(font-lock-string-face ((t (:foreground ,peakburn-green))))
    `(font-lock-type-face ((t (:foreground ,peakburn-blue-1))))
-   `(font-lock-variable-name-face ((t (:foreground ,peakburn-orange))))
-   `(font-lock-warning-face ((t (:foreground ,peakburn-yellow-2 :weight bold))))
+   `(font-lock-variable-name-face ((t (:foreground ,peakburn-pink))))
+   `(font-lock-warning-face ((t (:foreground ,peakburn-orange :weight bold))))
 
    `(c-annotation-face ((t (:inherit font-lock-constant-face))))
 ;;;;; newsticker
@@ -185,7 +188,7 @@ Also bind `class' to ((class color) (min-colors 89))."
    `(ace-jump-face-background
      ((t (:foreground ,peakburn-fg-1 :background ,peakburn-bg :inverse-video nil))))
    `(ace-jump-face-foreground
-     ((t (:foreground ,peakburn-green+2 :background ,peakburn-bg :inverse-video nil))))
+     ((t (:foreground ,peakburn-puregreen :background ,peakburn-bg :inverse-video nil))))
 ;;;;; full-ack
    `(ack-separator ((t (:foreground ,peakburn-fg))))
    `(ack-file ((t (:foreground ,peakburn-blue))))
@@ -397,10 +400,8 @@ Also bind `class' to ((class color) (min-colors 89))."
    `(helm-candidate-number ((t (:foreground ,peakburn-green+4 :background ,peakburn-bg-1))))
    `(helm-ff-directory ((t (:foreground ,peakburn-magenta))))
 ;;;;; hl-line-mode
-   `(hl-line-face ((,class (:background ,peakburn-bg-05))
+   `(hl-line-face ((,class (:background ,peakburn-bg+1))
                    (t :weight bold)))
-   `(hl-line ((,class (:background ,peakburn-bg-05)) ; old emacsen
-              (t :weight bold)))
 ;;;;; hl-sexp
    `(hl-sexp-face ((,class (:background ,peakburn-bg+1))
                    (t :weight bold)))
@@ -429,7 +430,7 @@ Also bind `class' to ((class color) (min-colors 89))."
    `(jabber-title-medium ((t (:height 1.2 :weight bold))))
    `(jabber-title-large ((t (:height 1.3 :weight bold))))
 ;;;;; linum-mode
-   `(linum ((t (:foreground ,peakburn-green+2 :background ,peakburn-bg))))
+   `(linum ((t (:foreground ,peakburn-fg-1 :background ,peakburn-bg+1))))
 ;;;;; macrostep
    `(macrostep-gensym-1
      ((t (:foreground ,peakburn-green+2 :background ,peakburn-bg-1))))
