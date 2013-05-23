@@ -29,13 +29,13 @@
     autopair
     epc
     evil
+    flycheck
     ghc
     haskell-mode
     ido
     jedi
     rainbow-mode
-    scala-mode2
-    ))
+    scala-mode2))
 
 (dolist (p my-packages)
   (when (not (package-installed-p p))
@@ -63,6 +63,9 @@
 (require 'autopair)
 (autopair-global-mode)
 (setq autopair-blink nil) ; don't blink around
+
+;; Flycheck
+(require 'kluge-flycheck)
 
 ;; Ido
 (require 'kluge-ido)
