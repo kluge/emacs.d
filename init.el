@@ -29,6 +29,7 @@
     autopair
     epc
     evil
+    evil-leader
     flycheck
     ghc
     haskell-mode
@@ -66,6 +67,9 @@
 
 ;; Flycheck
 (require 'kluge-flycheck)
+
+;; Haskell
+(require 'kluge-haskell)
 
 ;; Ido
 (require 'kluge-ido)
