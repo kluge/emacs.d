@@ -26,7 +26,6 @@
 (defvar my-packages
   '(ace-jump-mode
     auto-complete
-    autopair
     epc
     evil
     evil-leader
@@ -37,6 +36,7 @@
     jedi
     rainbow-mode
     scala-mode2
+    smartparens
     surround
     ))
 
@@ -62,11 +62,6 @@
 (ac-config-default)
 (global-auto-complete-mode t)
 
-;; Autopair
-(require 'autopair)
-(autopair-global-mode)
-(setq autopair-blink nil) ; don't blink around
-
 ;; Flycheck
 (require 'kluge-flycheck)
 
@@ -84,3 +79,6 @@
 
 ;; Scala
 (require 'kluge-scala)
+
+;; Smartparens
+(require 'kluge-smartparens)
