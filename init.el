@@ -36,7 +36,9 @@
     ido
     jedi
     rainbow-mode
-    scala-mode2))
+    scala-mode2
+    surround
+    ))
 
 (dolist (p my-packages)
   (when (not (package-installed-p p))

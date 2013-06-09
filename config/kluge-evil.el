@@ -14,4 +14,8 @@
 (evil-leader/set-key
  "a" 'align-regexp)
 
+;; Surround
+(require 'surround)
+(global-surround-mode 1)
+
 (provide 'kluge-evil)
