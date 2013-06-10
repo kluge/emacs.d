@@ -5,7 +5,10 @@
 (setq inhibit-startup-message t)
 
 ;; Set font size
-(set-face-attribute 'default nil :height 85)
+
+(if (eq system-type 'windows-nt)
+    (set-face-attribute 'default nil :height 100)
+  (set-face-attribute 'default nil :height 85))
 
 ;; Use Peakburn color theme
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
