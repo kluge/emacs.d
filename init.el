@@ -80,6 +80,9 @@
 (add-hook 'python-mode-hook 'auto-complete-mode)
 (add-hook 'python-mode-hook 'jedi:ac-setup)
 
+;; Org
+(require 'kluge-org)
+
 ;; Scala
 (require 'kluge-scala)
 
