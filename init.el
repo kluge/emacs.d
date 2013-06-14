@@ -88,3 +88,13 @@
 
 ;; Smartparens
 (require 'kluge-smartparens)
+
+;; Binding for current date
+(defun kluge-insert-date (arg)
+  (interactive "P")
+  (insert (if arg
+	      (format-time-string "%Y-%m-%d %H:%M")
+	    (format-time-string "%Y-%m-%d"))))
+
+(define-key evil-insert-state-map (kbd "<f5>") 'kluge-insert-date)
+
