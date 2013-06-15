@@ -92,9 +92,10 @@
 ;; Binding for current date
 (defun kluge-insert-date (arg)
   (interactive "P")
-  (insert (if arg
-	      (format-time-string "%Y-%m-%d %H:%M")
-	    (format-time-string "%Y-%m-%d"))))
+  (insert (cond
+	   ((not arg) (format-time-string "%Y-%m-%d"))
+	   ((equal arg '(4)) (format-time-string "%Y-%m-%dT%H:%M"))
+	   ((equal arg '(16)) (format-time-string "%Y-%m-%d %H:%M")))))
 
 (define-key evil-insert-state-map (kbd "<f5>") 'kluge-insert-date)
 
