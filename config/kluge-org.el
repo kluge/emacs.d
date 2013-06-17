@@ -3,6 +3,8 @@
 ;; Org file paths
 (setq org-agenda-files '("~/org"))
 (setq org-default-notes-file "~/org/inbox.org")
+(setq org-refile-targets '((nil . (:maxlevel . 3))
+			   (org-agenda-files . (:maxlevel . 3))))
 
 ;; Use Ido for buffer switching
 (setq org-completion-use-ido t)
