@@ -1,6 +1,8 @@
 # Emacs directories
 auto-save-list/
+backups/
 elpa/
 url/
 # Emacs files
 ac-comphist.dat
+bookmarks
