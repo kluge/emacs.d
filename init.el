@@ -40,6 +40,7 @@
     rainbow-mode
     scala-mode2
     smartparens
+    smex
     surround
     ))
 
@@ -88,6 +89,12 @@
 
 ;; Smartparens
 (require 'kluge-smartparens)
+
+;; Smex
+(require 'smex)
+(smex-initialize)
+(global-set-key (kbd "M-x") 'smex)
+(global-set-key (kbd "M-X") 'smex-major-mode-commands)
 
 ;; Binding for current date
 (defun kluge-insert-date (arg)
