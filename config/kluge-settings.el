@@ -12,6 +12,9 @@
 (column-number-mode 1)  ; show column number in modeline
 (global-linum-mode -1)  ; don't show line numbers
 
+;; Behavior settings
+(global-auto-revert-mode t) ; reflect changes on disc, if file is unchanged
+
 ;; Code settings
 (setq indent-tabs-mode nil) ; use spaces to indent
 ; don't use tabs in align-regexp
