@@ -9,6 +9,9 @@
 ;; Use Ido for buffer switching
 (setq org-completion-use-ido t)
 
+;; Indent and show less stars
+(setq org-startup-indented t)
+
 ;; Commands
 (evil-define-command kluge-org-meta-return (&optional count argument)
   "org-meta-return and insert state"
@@ -27,6 +30,7 @@
 ;; Global hotkeys
 (global-set-key (kbd "C-c a") 'org-agenda)
 (global-set-key (kbd "C-c b") 'org-iswitchb)
+(global-set-key (kbd "C-c l") 'org-store-link)
 (global-set-key (kbd "C-c r") 'org-capture)
 
 ;; Mode hotkeys
