@@ -5,6 +5,9 @@
 (setq auto-save-file-name-transforms
           `((".*" ,temporary-file-directory t)))
 
+;; Encoding
+(prefer-coding-system 'utf-8)
+
 ;; Visual settings
 (show-paren-mode 1)     ; highlight matching parenthesis
 (global-hl-line-mode 1) ; highlight current line
