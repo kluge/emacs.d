@@ -16,6 +16,7 @@
 (global-linum-mode -1)  ; don't show line numbers
 
 ;; Behavior settings
+(setq use-dialog-box nil)
 (global-auto-revert-mode t) ; reflect changes on disc, if file is unchanged
 
 ;; Code settings
