@@ -36,6 +36,7 @@
     ghc
     haskell-mode
     ido
+    ido-ubiquitous
     jedi
     rainbow-mode
     scala-mode2
