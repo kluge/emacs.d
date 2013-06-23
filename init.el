@@ -62,10 +62,7 @@
 (require 'kluge-ace-jump)
 
 ;; Auto Complete
-(require 'auto-complete-config)
-(add-to-list 'ac-dictionary-directories "~/.emacs.d/dict")
-(ac-config-default)
-(global-auto-complete-mode t)
+(require 'kluge-auto-complete)
 
 ;; Flycheck
 (require 'kluge-flycheck)
