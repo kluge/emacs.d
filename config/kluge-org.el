@@ -1,4 +1,5 @@
 (require 'org)
+(require 'evil)
 
 ;; Org file paths
 (setq org-agenda-files '("~/org"))
@@ -33,9 +34,31 @@
 (global-set-key (kbd "C-c l") 'org-store-link)
 (global-set-key (kbd "C-c r") 'org-capture)
 
-;; Mode hotkeys
+;; Normal state hotkeys
 (evil-define-key 'normal org-mode-map
   (kbd "M-<return>") 'kluge-org-meta-return
-  (kbd "M-S-<return>") 'kluge-org-insert-todo-heading)
+  (kbd "M-S-<return>") 'kluge-org-insert-todo-heading
+  (kbd "gh") 'outline-up-heading
+  (kbd "gj") 'org-forward-heading-same-level
+  (kbd "gk") 'org-backward-heading-same-level
+  (kbd "gl") 'outline-next-visible-heading
+  (kbd "^") 'org-beginning-of-line
+  (kbd "$") 'org-end-of-line
+  (kbd "<") 'org-metaleft
+  (kbd ">") 'org-metaright
+  )
+
+;; Normal and insert state hotkeys
+(mapc (lambda (state)
+	      (evil-define-key state org-mode-map
+		(kbd "M-l") 'org-metaright
+		(kbd "M-h") 'org-metaleft
+		(kbd "M-k") 'org-metaup
+		(kbd "M-j") 'org-metadown
+		(kbd "M-L") 'org-shiftmetaright
+		(kbd "M-H") 'org-shiftmetaleft
+		(kbd "M-K") 'org-shiftmetaup
+		(kbd "M-J") 'org-shiftmetadown))
+      '(normal insert))
 
 (provide 'kluge-org)
