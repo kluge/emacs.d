@@ -99,6 +99,10 @@
 (global-set-key (kbd "M-x") 'smex)
 (global-set-key (kbd "M-X") 'smex-major-mode-commands)
 
+;; Uniquify
+(require 'uniquify)
+(setq uniquify-buffer-name-style 'reverse)
+
 ;; Binding for current date
 (defun kluge-insert-date (arg)
   (interactive "P")
