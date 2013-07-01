@@ -30,6 +30,7 @@
   '(ace-jump-mode
     ack-and-a-half
     auto-complete
+    diminish
     epc
     evil
     evil-leader
@@ -108,3 +109,7 @@
 
 (define-key evil-insert-state-map (kbd "<f5>") 'kluge-insert-date)
 
+;; Diminish
+(require 'diminish)
+; Clean up modes that don't need to show on the modeline
+(diminish 'undo-tree-mode)
