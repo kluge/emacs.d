@@ -28,6 +28,7 @@
 ;; Install the packages, if they're not already installed
 (defvar my-packages
   '(ace-jump-mode
+    ack-and-a-half
     auto-complete
     epc
     evil
@@ -60,6 +61,9 @@
 
 ;; Acejump
 (require 'kluge-ace-jump)
+
+;; Ack and a half
+(require 'kluge-ack-and-a-half)
 
 ;; Auto Complete
 (require 'kluge-auto-complete)
