@@ -13,6 +13,9 @@
 ;; Indent and show less stars
 (setq org-startup-indented t)
 
+;; Log date when a task is done
+(setq org-log-done 'time)
+
 ;; Commands
 (evil-define-command kluge-org-meta-return (&optional count argument)
   "org-meta-return and insert state"
