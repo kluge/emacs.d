@@ -28,7 +28,9 @@
 ;; Install the packages, if they're not already installed
 (defvar my-packages
   '(ace-jump-mode
+    ack-and-a-half
     auto-complete
+    diminish
     epc
     evil
     evil-leader
@@ -60,6 +62,9 @@
 
 ;; Acejump
 (require 'kluge-ace-jump)
+
+;; Ack and a half
+(require 'kluge-ack-and-a-half)
 
 ;; Auto Complete
 (require 'kluge-auto-complete)
@@ -94,6 +99,10 @@
 (global-set-key (kbd "M-x") 'smex)
 (global-set-key (kbd "M-X") 'smex-major-mode-commands)
 
+;; Uniquify
+(require 'uniquify)
+(setq uniquify-buffer-name-style 'reverse)
+
 ;; Binding for current date
 (defun kluge-insert-date (arg)
   (interactive "P")
@@ -104,3 +113,7 @@
 
 (define-key evil-insert-state-map (kbd "<f5>") 'kluge-insert-date)
 
+;; Diminish
+(require 'diminish)
+; Clean up modes that don't need to show on the modeline
+(diminish 'undo-tree-mode)
