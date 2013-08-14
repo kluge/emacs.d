@@ -16,6 +16,19 @@
 ;; Log date when a task is done
 (setq org-log-done 'time)
 
+;; Capture templates
+(setq org-capture-templates
+      '(("t" "Todo" entry (file "~/org/inbox.org")
+	 "* TODO %?\n%U\n%i")
+	("l" "Todo with link" entry (file "~/org/inbox.org")
+	 "* TODO %?\n%U\n%i\n%a")
+	("n" "Note" entry (file "~/org/inbox.org")
+	 "* %?\n%U\n%i\n")
+	("m" "Note with link" entry (file "~/org/inbox.org")
+	 "* %?\n%U\n%i\n%a")
+	("j" "Journal" entry (file+datetree "~/journal/2013.org")
+	 "* %U\n%?")))
+
 ;; Commands
 (evil-define-command kluge-org-meta-return (&optional count argument)
   "org-meta-return and insert state"
@@ -35,7 +48,7 @@
 (global-set-key (kbd "C-c a") 'org-agenda)
 (global-set-key (kbd "C-c b") 'org-iswitchb)
 (global-set-key (kbd "C-c l") 'org-store-link)
-(global-set-key (kbd "C-c r") 'org-capture)
+(global-set-key (kbd "C-c c") 'org-capture)
 
 ;; Normal state hotkeys
 (evil-define-key 'normal org-mode-map
