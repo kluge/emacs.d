@@ -10,6 +10,9 @@
     (set-face-attribute 'default nil :height 100)
   (set-face-attribute 'default nil :height 85))
 
+;; Show current buffer in frame title
+(setq frame-title-format '("" "%b - Emacs"))
+
 ;; Use Peakburn color theme
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
 (load-theme 'peakburn t)
