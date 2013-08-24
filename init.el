@@ -38,11 +38,13 @@
     evil
     evil-leader
     flycheck
+    flx-ido
     ghc
     haskell-mode
     ido
     ido-ubiquitous
     jedi
+    projectile
     rainbow-mode
     scala-mode2
     smartparens
@@ -89,6 +91,10 @@
 
 ;; Org
 (require 'kluge-org)
+
+;; Projectile
+(require 'projectile)
+(projectile-global-mode)
 
 ;; Scala
 (require 'kluge-scala)
