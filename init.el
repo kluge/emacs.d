@@ -59,6 +59,10 @@
 ;; Load config from separate files
 (add-to-list 'load-path "~/.emacs.d/config/")
 
+;; Save customizations to a separate file
+(setq custom-file "~/.emacs.d/custom.el")
+(load custom-file)
+
 ;; General settings
 (require 'kluge-settings)
 
