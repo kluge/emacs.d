@@ -13,8 +13,10 @@
 ;; Indent and show less stars
 (setq org-startup-indented t)
 
-;; Log date when a task is done
-(setq org-log-done 'time)
+;; Log date when task state is changed
+(setq org-todo-keywords
+      '((sequence "TODO(t!)" "|" "DONE(d!)" "CANCELED(c@)")))
+(setq org-log-into-drawer t)
 
 ;; Capture templates
 (setq org-capture-templates
