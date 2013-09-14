@@ -37,6 +37,7 @@
     epc
     evil
     evil-leader
+    evil-indent-textobject
     flycheck
     flx-ido
     ghc
@@ -68,6 +69,7 @@
 
 ;; Evil (Extensible Vi Layer)
 (require 'kluge-evil)
+(require 'evil-indent-textobject)
 
 ;; Acejump
 (require 'kluge-ace-jump)
