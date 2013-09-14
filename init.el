@@ -99,8 +99,7 @@
 (require 'kluge-org)
 
 ;; Projectile
-(require 'projectile)
-(projectile-global-mode)
+(require 'kluge-projectile)
 
 ;; Scala
 (require 'kluge-scala)
