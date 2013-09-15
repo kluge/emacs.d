@@ -45,6 +45,7 @@
     ido
     ido-ubiquitous
     jedi
+    magit
     projectile
     rainbow-mode
     scala-mode2
@@ -103,6 +104,9 @@
 
 ;; Projectile
 (require 'kluge-projectile)
+
+;; Magit
+(global-set-key (kbd "C-c m") 'magit-status)
 
 ;; Scala
 (require 'kluge-scala)
