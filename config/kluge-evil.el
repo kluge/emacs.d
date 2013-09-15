@@ -1,3 +1,8 @@
+(require 'evil)
+
+;; Use C-w for window commands even in Emacs state
+(setq evil-want-C-w-in-emacs-state t)
+
 (evil-mode 1)   ; enable Evil
 
 ;; C-e for end of line in insert state
