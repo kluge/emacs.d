@@ -11,6 +11,9 @@
 ;; M-d for scrolling up in normal state
 (define-key evil-normal-state-map (kbd "M-d") 'evil-scroll-up)
 
+;; Indent on newline
+(define-key evil-insert-state-map (kbd "RET") 'evil-ret-and-indent)
+
 ;; Evil leader
 (require 'evil-leader)
 (global-evil-leader-mode)
