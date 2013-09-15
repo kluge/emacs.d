@@ -7,3 +7,5 @@ url/
 ac-comphist.dat
 bookmarks
 projectile-bookmarks.eld
+eshell/history
+eshell/lastdir
