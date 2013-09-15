@@ -80,6 +80,9 @@
 ;; Auto Complete
 (require 'kluge-auto-complete)
 
+;; Emacs Lisp
+(require 'kluge-elisp)
+
 ;; Flycheck
 (require 'kluge-flycheck)
 
