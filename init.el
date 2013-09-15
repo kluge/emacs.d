@@ -36,16 +36,17 @@
     diminish
     epc
     evil
-    evil-leader
     evil-indent-textobject
-    flycheck
+    evil-leader
     flx-ido
+    flycheck
     ghc
     haskell-mode
     ido
     ido-ubiquitous
     jedi
     magit
+    org
     projectile
     rainbow-mode
     scala-mode2
