@@ -31,6 +31,9 @@
 	("j" "Journal" entry (file+datetree "~/journal/2013.org")
 	 "* %U\n%?")))
 
+;; Habit tracking
+(setq org-habit-following-days 0) ; don't show future days
+
 ;; Commands
 (evil-define-command kluge-org-meta-return (&optional count argument)
   "org-meta-return and insert state"
