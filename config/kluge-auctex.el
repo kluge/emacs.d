@@ -8,6 +8,8 @@
 (add-hook 'LaTeX-mode-hook 'turn-on-reftex)
 (setq reftex-plug-into-AUCTex t)
 
+(add-to-list 'evil-emacs-state-modes 'reftex-select-label-mode)
+
 ;; Compile into PDFs
 (setq TeX-PDF-mode t)
 ;; Use Okular to view
