@@ -35,6 +35,7 @@
 (defvar my-packages
   '(ace-jump-mode
     ack-and-a-half
+    auctex
     auto-complete
     diminish
     epc
@@ -81,6 +82,9 @@
 
 ;; Ack and a half
 (require 'kluge-ack-and-a-half)
+
+;; Auctex
+(require 'kluge-auctex)
 
 ;; Auto Complete
 (require 'kluge-auto-complete)
