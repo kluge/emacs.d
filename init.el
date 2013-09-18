@@ -4,8 +4,11 @@
 (scroll-bar-mode -1)
 (setq inhibit-startup-message t)
 
-;; Set font size
+;; Set frame size
+(add-to-list 'default-frame-alist '(height . 50))
+(add-to-list 'default-frame-alist '(width . 120))
 
+;; Set font size
 (if (eq system-type 'windows-nt)
     (set-face-attribute 'default nil :height 100)
   (set-face-attribute 'default nil :height 85))
