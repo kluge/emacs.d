@@ -57,6 +57,7 @@
     smartparens
     smex
     surround
+    yasnippet
     ))
 
 (dolist (p my-packages)
@@ -86,7 +87,12 @@
 ;; Auctex
 (require 'kluge-auctex)
 
+;; YASnippet
+;; load before auto-complete to allow interoperation
+(require 'kluge-yasnippet)
+
 ;; Auto Complete
+;; load after yasnippet to allow interoperation
 (require 'kluge-auto-complete)
 
 ;; Emacs Lisp
