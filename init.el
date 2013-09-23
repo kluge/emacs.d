@@ -120,7 +120,7 @@
 (require 'kluge-projectile)
 
 ;; Magit
-(global-set-key (kbd "C-c m") 'magit-status)
+(require 'kluge-magit)
 
 ;; Scala
 (require 'kluge-scala)
