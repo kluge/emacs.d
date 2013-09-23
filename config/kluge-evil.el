@@ -14,6 +14,10 @@
 ;; Indent on newline
 (define-key evil-insert-state-map (kbd "RET") 'evil-ret-and-indent)
 
+;; Opening file in other window
+;;(evil binds to 'ffap-other-window, which is not remapped by ido)
+(define-key evil-window-map (kbd "C-f") 'find-file-other-window)
+
 ;; Evil leader
 (require 'evil-leader)
 (global-evil-leader-mode)
