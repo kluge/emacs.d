@@ -138,6 +138,9 @@
 (require 'uniquify)
 (setq uniquify-buffer-name-style 'reverse)
 
+;; Winner-mode
+(winner-mode 1)
+
 ;; Binding for current date
 (defun kluge-insert-date (arg)
   (interactive "P")
