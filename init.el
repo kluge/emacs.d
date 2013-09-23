@@ -154,4 +154,5 @@
 ;; Diminish
 (require 'diminish)
 ; Clean up modes that don't need to show on the modeline
+(diminish 'projectile-mode)
 (diminish 'undo-tree-mode)
