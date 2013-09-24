@@ -42,6 +42,7 @@
     evil
     evil-indent-textobject
     evil-leader
+    evil-nerd-commenter
     flx-ido
     flycheck
     ghc

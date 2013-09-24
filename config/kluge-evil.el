@@ -30,4 +30,8 @@
 (require 'surround)
 (global-surround-mode 1)
 
+;; Evil nerd-commenter
+(setq evilnc-hotkey-comment-operator "gc")
+(require 'evil-nerd-commenter)
+
 (provide 'kluge-evil)
