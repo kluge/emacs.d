@@ -6,7 +6,9 @@
 (evil-mode 1)   ; enable Evil
 
 ;; C-e for end of line in insert state
-(define-key evil-insert-state-map (kbd "C-e") 'evil-end-of-line)
+(define-key evil-insert-state-map (kbd "C-e") 'end-of-line)
+;; C-k for killing the line, I don't remember ever using digraphs
+(define-key evil-insert-state-map (kbd "C-k") 'kill-line)
 
 ;; M-d for scrolling up in motion state
 (define-key evil-motion-state-map (kbd "M-d") 'evil-scroll-up)
