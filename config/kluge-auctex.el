@@ -22,4 +22,12 @@
 (setq TeX-view-program-list '(("Okular" "okular %o")))
 (setq TeX-view-program-selection '((output-pdf "Okular")))
 
+;; Shortcut for compilation
+(defun kluge-compile-latex ()
+  (interactive)
+  (TeX-command "LaTeX" 'TeX-master-file nil))
+
+(evil-leader/set-key-for-mode 'latex-mode
+  "c" 'kluge-compile-latex)
+
 (provide 'kluge-auctex)
