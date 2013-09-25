@@ -33,6 +33,7 @@
 
 ;; Habit tracking
 (setq org-habit-following-days 0) ; don't show future days
+(setq org-habit-show-done-always-green t) ; show done on a green background
 
 ;; Commands
 (evil-define-command kluge-org-meta-return (&optional count argument)
