@@ -12,6 +12,6 @@
 
 (evil-leader/set-key
   "s" 'ack
-  ",s" 'ack-same)
+  "ös" 'ack-same)
 
 (provide 'kluge-ack-and-a-half)

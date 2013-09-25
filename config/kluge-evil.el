@@ -21,10 +21,10 @@
 ;; Evil leader
 (require 'evil-leader)
 (global-evil-leader-mode)
-(evil-leader/set-leader ",")
+(evil-leader/set-leader "ö")
 
 (evil-leader/set-key
- "a" 'align-regexp)
+  "a" 'align-regexp)
 
 ;; Surround
 (require 'surround)
