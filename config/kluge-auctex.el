@@ -25,6 +25,8 @@
 ;; Shortcut for compilation
 (defun kluge-compile-latex ()
   (interactive)
+  (when (buffer-modified-p)
+    (save-buffer))
   (TeX-command "LaTeX" 'TeX-master-file nil))
 
 (evil-leader/set-key-for-mode 'latex-mode
