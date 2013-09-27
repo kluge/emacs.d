@@ -123,6 +123,9 @@
 ;; Magit
 (require 'kluge-magit)
 
+;; Mu4e
+(require 'kluge-mu4e)
+
 ;; Scala
 (require 'kluge-scala)
 
