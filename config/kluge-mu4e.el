@@ -50,4 +50,20 @@
 (define-key mu4e-view-mode-map (kbd "C-d") 'evil-scroll-down)
 (define-key mu4e-view-mode-map (kbd "M-d") 'evil-scroll-up)
 
+;; Canning spam
+(defun kluge-mu4e-headers-spam ()
+  "Move the current message to spam folder."
+  (interactive)
+  (mu4e-mark-set 'move "/spam")
+  (mu4e-headers-next))
+(defun kluge-mu4e-view-spam ()
+  "Move the current message to spam folder."
+  (interactive)
+  (mu4e~view-in-headers-context
+   (mu4e-mark-set 'move "/spam"))
+  (mu4e-view-headers-next))
+
+(define-key mu4e-headers-mode-map (kbd "c") 'kluge-mu4e-headers-spam)
+(define-key mu4e-view-mode-map (kbd "c") 'kluge-mu4e-view-spam)
+
 (provide 'kluge-mu4e)
