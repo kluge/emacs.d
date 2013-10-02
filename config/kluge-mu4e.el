@@ -1,5 +1,5 @@
-;; Basic options
 (when (require 'mu4e nil t)
+  ;; Basic options
   (setq mu4e-maildir "/home/kluge/maildir-kapsi")
   (setq mu4e-attachment-dir "~/incoming")
 
@@ -24,6 +24,9 @@
 
   ;; UI options
   (setq mu4e-view-show-addresses t)
+
+  ;; HTML mails
+  (setq mu4e-html2text-command "w3m -dump -T text/html")
 
   ;; Don't keep sent message buffers around
   (setq message-kill-buffer-on-exit t)
