@@ -37,4 +37,17 @@
     ad-do-it))
 (ad-activate 'align-regexp)
 
+;; Remember place in files
+(require 'saveplace)
+(setq save-place-file "~/.emacs.d/saved-places")
+(setq-default save-place t)
+
 (provide 'kluge-settings)
+
+
+
+
+
+
+
+
