@@ -24,6 +24,9 @@
 
   ;; UI options
   (setq mu4e-view-show-addresses t)
+  (setq mu4e-headers-time-format "%T")
+  (setq mu4e-headers-date-format "%Y-%m-%d")
+  (setq mu4e-date-format-long "%A %Y-%m-%d %T %z (%Z)")
 
   ;; HTML mails
   (setq mu4e-html2text-command "w3m -dump -T text/html")
