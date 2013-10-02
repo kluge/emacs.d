@@ -6,12 +6,13 @@
           `((".*" ,temporary-file-directory t)))
 
 ;; Add git to PATH on windows
-(defvar kluge-git-path "D:/Program Files (x86)/Git/bin")
-(setenv "PATH"
-	(concat
-	 kluge-git-path ";"
-	 (getenv "PATH")))
-(add-to-list 'exec-path kluge-git-path)
+(when (eq system-type 'windows-nt)
+  (defvar kluge-git-path "D:/Program Files (x86)/Git/bin")
+  (setenv "PATH"
+	  (concat
+	   kluge-git-path ";"
+	   (getenv "PATH")))
+  (add-to-list 'exec-path kluge-git-path))
 
 ;; Encoding
 (prefer-coding-system 'utf-8)
