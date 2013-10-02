@@ -22,6 +22,8 @@
 (setq TeX-view-program-list '(("Okular" "okular %o")))
 (setq TeX-view-program-selection '((output-pdf "Okular")))
 
+;; Autocompletion from https://github.com/monsanto/auto-complete-auctex
+(require 'auto-complete-auctex)
 ;; Shortcut for compilation
 (defun kluge-compile-latex ()
   (interactive)

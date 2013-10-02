@@ -72,6 +72,9 @@
 (setq custom-file "~/.emacs.d/custom.el")
 (load custom-file)
 
+;; Unpackaged elisp
+(add-to-list 'load-path "~/.emacs.d/vendor/")
+
 ;; General settings
 (require 'kluge-settings)
 
