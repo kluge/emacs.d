@@ -43,6 +43,7 @@
     evil-indent-textobject
     evil-leader
     evil-nerd-commenter
+    expand-region
     flx-ido
     flycheck
     ghc
@@ -101,6 +102,9 @@
 
 ;; Emacs Lisp
 (require 'kluge-elisp)
+
+;; Expand region
+(require 'kluge-expand-region)
 
 ;; Flycheck
 (require 'kluge-flycheck)
