@@ -24,6 +24,18 @@
 
 ;; Autocompletion from https://github.com/monsanto/auto-complete-auctex
 (require 'auto-complete-auctex)
+
+;; Word wrapping for Latex
+(add-hook 'LaTeX-mode-hook 'turn-on-auto-fill)
+
+;; Snippet for extended subscripts
+(defun kluge-extended-subscript ()
+  (interactive)
+  (yas-expand-snippet "_{$1}$0"))
+
+(evil-define-key 'insert LaTeX-mode-map
+  (kbd "M-s") 'kluge-extended-subscript)
+
 ;; Shortcut for compilation
 (defun kluge-compile-latex ()
   (interactive)
