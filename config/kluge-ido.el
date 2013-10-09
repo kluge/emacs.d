@@ -16,4 +16,9 @@
 (define-key evil-ex-map "b " 'ido-switch-buffer)
 (define-key evil-ex-map "e " 'ido-find-file)
 
+;; And leader bindings
+(evil-leader/set-key
+  "b" 'ido-switch-buffer
+  "f" 'ido-find-file)
+
 (provide 'kluge-ido)
