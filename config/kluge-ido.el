@@ -7,6 +7,7 @@
 (ido-mode 1)
 (ido-ubiquitous-mode t)
 (flx-ido-mode 1)
+(ido-vertical-mode 1)
 
 ;; Preferred file extensions
 (setq ido-file-extensions-order '(".org" ".txt" ".py" ".el" ".hs" ".c" ".cpp" ".h"))

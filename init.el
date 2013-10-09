@@ -50,6 +50,7 @@
     haskell-mode
     ido
     ido-ubiquitous
+    ido-vertical-mode
     jedi
     magit
     org
