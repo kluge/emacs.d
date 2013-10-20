@@ -29,7 +29,12 @@
 (evil-leader/set-leader "ö")
 
 (evil-leader/set-key
-  "a" 'align-regexp)
+  "a" 'align-regexp
+  "w" 'kluge-write-whole-file)
+
+(defun kluge-write-whole-file ()
+  (interactive)
+  (evil-write nil nil))
 
 ;; Surround
 (require 'surround)
