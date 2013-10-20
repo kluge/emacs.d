@@ -27,8 +27,12 @@
 ;; Behavior settings
 (setq use-dialog-box nil)
 (global-auto-revert-mode t) ; reflect changes on disc, if file is unchanged
+; Also autorefresh dired without too much ceremony
+(setq global-auto-revert-non-file-buffers t)
+(setq auto-revert-verbose nil)
 
 ;; Code settings
+(set-default 'sentence-end-double-space nil) ; sentences don't need two spaces to end
 (setq indent-tabs-mode nil) ; use spaces to indent
 ; don't use tabs in align-regexp
 ; (from http://stackoverflow.com/questions/915985/in-emacs-how-to-line-up-equals-signs-in-a-series-of-initialization-statements)
