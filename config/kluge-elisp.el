@@ -3,4 +3,9 @@
 	  (lambda ()
 	    (setq evil-shift-width 2)))
 
+;; Enable eldoc (show function arguments in the minibuffer)
+(add-hook 'emacs-lisp-mode-hook 'turn-on-eldoc-mode)
+(add-hook 'lisp-interaction-mode-hook 'turn-on-eldoc-mode)
+(add-hook 'ielm-mode-hook 'turn-on-eldoc-mode)
+
 (provide 'kluge-elisp)
