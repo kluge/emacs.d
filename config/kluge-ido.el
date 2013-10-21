@@ -2,6 +2,7 @@
 (require 'ido-ubiquitous)
 (require 'flx-ido)
 
+;; Ido everywhere with better flex matching
 (setq ido-enable-flex-matching t)
 (setq ido-everywhere t)
 (ido-mode 1)
@@ -9,8 +10,11 @@
 (flx-ido-mode 1)
 (ido-vertical-mode 1)
 
+;; Don't ignore case
+(setq ido-case-fold nil)
+
 ;; Preferred file extensions
-(setq ido-file-extensions-order '(".org" ".txt" ".py" ".el" ".hs" ".c" ".cpp" ".h"))
+(setq ido-file-extensions-order '(".org" ".txt" ".py" ".el" ".hs" ".c" ".cpp" ".h" ".tex"))
 
 ;; Ido mode ex bindings
 (define-key evil-ex-map "b " 'ido-switch-buffer)
