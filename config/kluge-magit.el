@@ -19,4 +19,7 @@
 (define-key magit-status-mode-map (kbd "K") 'magit-discard-item)
 (define-key magit-branch-manager-mode-map (kbd "K") 'magit-discard-item)
 
+;; Start commit message window in insert state
+(evil-set-initial-state 'git-commit-mode 'insert)
+
 (provide 'kluge-magit)
