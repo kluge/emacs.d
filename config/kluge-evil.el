@@ -5,6 +5,9 @@
 
 (evil-mode 1)   ; enable Evil
 
+;; Red cursor for Emacs state
+(setq evil-emacs-state-cursor '("#cc4444" box))
+
 ;; Y yanks to the end of the line
 (define-key evil-normal-state-map "Y" (kbd "y$"))
 
