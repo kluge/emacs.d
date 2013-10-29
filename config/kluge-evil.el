@@ -30,11 +30,23 @@
 
 (evil-leader/set-key
   "a" 'align-regexp
-  "w" 'kluge-write-whole-file)
+  "w" 'kluge-write-whole-file
+  "h" 'kluge-horizontal-split
+  "v" 'kluge-vertical-split)
 
 (defun kluge-write-whole-file ()
   (interactive)
   (evil-write nil nil))
+
+(defun kluge-vertical-split ()
+  (interactive)
+  (split-window-right)
+  (evil-window-right 1))
+
+(defun kluge-horizontal-split ()
+  (interactive)
+  (split-window-below)
+  (evil-window-down 1))
 
 ;; Surround
 (require 'surround)
