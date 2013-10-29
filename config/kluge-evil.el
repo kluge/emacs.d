@@ -5,6 +5,9 @@
 
 (evil-mode 1)   ; enable Evil
 
+;; Use emacs state in ansi-term
+(evil-set-initial-state 'term-mode 'emacs)
+
 ;; Y yanks to the end of the line
 (define-key evil-normal-state-map "Y" (kbd "y$"))
 
