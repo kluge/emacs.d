@@ -56,4 +56,8 @@
 (setq evilnc-hotkey-comment-operator "gc")
 (require 'evil-nerd-commenter)
 
+;; Evil matchit
+(require 'evil-matchit)
+(define-key evil-normal-state-map "%" 'evilmi-jump-items)
+
 (provide 'kluge-evil)
