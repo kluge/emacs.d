@@ -8,4 +8,8 @@
 (add-hook 'lisp-interaction-mode-hook 'turn-on-eldoc-mode)
 (add-hook 'ielm-mode-hook 'turn-on-eldoc-mode)
 
+(evil-leader/set-key
+  "e" 'eval-last-sexp
+  "E" 'eval-defun)
+
 (provide 'kluge-elisp)

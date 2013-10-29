@@ -42,6 +42,7 @@
     evil
     evil-indent-textobject
     evil-leader
+    evil-matchit
     evil-nerd-commenter
     expand-region
     flx-ido

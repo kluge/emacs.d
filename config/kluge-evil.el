@@ -5,6 +5,9 @@
 
 (evil-mode 1)   ; enable Evil
 
+;; Red cursor for Emacs state
+(setq evil-emacs-state-cursor '("#cc4444" box))
+
 ;; Use emacs state in ansi-term
 (evil-set-initial-state 'term-mode 'emacs)
 
@@ -36,11 +39,23 @@
 
 (evil-leader/set-key
   "a" 'align-regexp
-  "w" 'kluge-write-whole-file)
+  "w" 'kluge-write-whole-file
+  "h" 'kluge-horizontal-split
+  "v" 'kluge-vertical-split)
 
 (defun kluge-write-whole-file ()
   (interactive)
   (evil-write nil nil))
+
+(defun kluge-vertical-split ()
+  (interactive)
+  (split-window-right)
+  (evil-window-right 1))
+
+(defun kluge-horizontal-split ()
+  (interactive)
+  (split-window-below)
+  (evil-window-down 1))
 
 ;; Surround
 (require 'surround)
@@ -49,5 +64,9 @@
 ;; Evil nerd-commenter
 (setq evilnc-hotkey-comment-operator "gc")
 (require 'evil-nerd-commenter)
+
+;; Evil matchit
+(require 'evil-matchit)
+(define-key evil-normal-state-map "%" 'evilmi-jump-items)
 
 (provide 'kluge-evil)
