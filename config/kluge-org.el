@@ -70,6 +70,9 @@
   (kbd ">") 'org-metaright
   )
 
+(evil-leader/set-key-for-mode 'org-mode
+  "t" 'org-todo)
+
 ;; Normal and insert state hotkeys
 (mapc (lambda (state)
 	      (evil-define-key state org-mode-map
