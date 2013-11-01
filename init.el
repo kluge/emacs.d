@@ -58,6 +58,7 @@
     projectile
     rainbow-mode
     scala-mode2
+    smart-mode-line
     smartparens
     smex
     surround
@@ -137,6 +138,11 @@
 
 ;; Scala
 (require 'kluge-scala)
+
+;; Smart-mode-line
+(require 'smart-mode-line)
+(if after-init-time (sml/setup)
+  (add-hook 'after-init-hook 'sml/setup))
 
 ;; Smartparens
 (require 'kluge-smartparens)
