@@ -8,9 +8,6 @@
 ;; Red cursor for Emacs state
 (setq evil-emacs-state-cursor '("#cc4444" box))
 
-;; Use emacs state in ansi-term
-(evil-set-initial-state 'term-mode 'emacs)
-
 ;; Y yanks to the end of the line
 (define-key evil-normal-state-map "Y" (kbd "y$"))
 

@@ -92,6 +92,9 @@
 ;; Ack and a half
 (require 'kluge-ack-and-a-half)
 
+;; Ansi-term
+(require 'kluge-ansi-term)
+
 ;; Auctex
 (require 'kluge-auctex)
 
