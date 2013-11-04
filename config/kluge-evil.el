@@ -36,6 +36,7 @@
 
 (evil-leader/set-key
   "a" 'align-regexp
+  "i" 'imenu
   "w" 'kluge-write-whole-file
   "h" 'kluge-horizontal-split
   "v" 'kluge-vertical-split)
