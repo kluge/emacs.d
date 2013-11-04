@@ -54,6 +54,7 @@
     ido-vertical-mode
     jedi
     magit
+    multiple-cursors
     org
     projectile
     rainbow-mode
@@ -138,6 +139,9 @@
 
 ;; Mu4e
 (require 'kluge-mu4e)
+
+;; Multiple cursors
+(require 'kluge-multiple-cursors)
 
 ;; Scala
 (require 'kluge-scala)
