@@ -89,4 +89,11 @@
 ;; Start in insert state in capture mode
 (add-hook 'org-capture-mode-hook 'evil-insert-state)
 
+;; Go to Emacs state for org-goto
+(defun kluge-emacs-state-in-org-goto ()
+  (when (equal (buffer-name (current-buffer)) "*org-goto*")
+    (evil-emacs-state)))
+
+(add-hook 'org-mode-hook 'kluge-emacs-state-in-org-goto)
+
 (provide 'kluge-org)
