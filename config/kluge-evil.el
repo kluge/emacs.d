@@ -29,6 +29,10 @@
 ;; Switch to buffer in other window
 (define-key evil-window-map (kbd "C-b") 'ido-switch-buffer-other-window)
 
+;; Don't override M-., it is useful. Rotate the repeat ring with C-, instead.
+(define-key evil-normal-state-map (kbd "M-.") nil)
+(define-key evil-normal-state-map (kbd "C-,") 'evil-repeat-pop-next)
+
 ;; Evil leader
 (require 'evil-leader)
 (global-evil-leader-mode)
