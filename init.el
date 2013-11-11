@@ -38,6 +38,7 @@
     auctex
     auto-complete
     diminish
+    ensime
     epc
     evil
     evil-indent-textobject
