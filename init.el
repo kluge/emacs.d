@@ -49,6 +49,7 @@
     flx-ido
     flycheck
     ghc
+    goto-chg
     haskell-mode
     ido
     ido-ubiquitous
