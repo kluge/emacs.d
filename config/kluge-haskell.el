@@ -6,6 +6,7 @@
 (setq haskell-indentation-left-offset 4)
 (setq haskell-indentation-ifte-offset 4)
 (setq haskell-indentation-cycle-warn nil) ; don't warn about moving to leftmost position
+(setq evil-auto-indent nil) ; disable evil's indenting
 
 ;; Scan declarations for imenu
 (add-hook 'haskell-mode-hook 'turn-on-haskell-decl-scan)
