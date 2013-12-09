@@ -69,6 +69,8 @@
 
 ;; Evil matchit
 (require 'evil-matchit)
-(define-key evil-normal-state-map "%" 'evilmi-jump-items)
+(defun evilmi-customize-keybinding ()
+  (define-key evil-normal-state-map "%" 'evilmi-jump-items))
+(global-evil-matchit-mode 1)
 
 (provide 'kluge-evil)
