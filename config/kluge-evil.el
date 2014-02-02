@@ -42,6 +42,7 @@
   "a" 'align-regexp
   "i" 'imenu
   "w" 'kluge-write-whole-file
+  "W" 'evil-write-all
   "h" 'kluge-horizontal-split
   "v" 'kluge-vertical-split)
 
