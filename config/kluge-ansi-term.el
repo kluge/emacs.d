@@ -1,6 +1,3 @@
-(require 'term)
-(require 'evil)
-
 ;; Don't enable yasnippet in ansi-term
 (add-hook 'term-mode-hook (lambda ()
 			    (yas-minor-mode -1)))

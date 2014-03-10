@@ -1,3 +1,5 @@
+(defconst emacs-start-time (current-time))
+
 ;; Disable extraneous GUI
 (menu-bar-mode -1)
 (tool-bar-mode -1)
@@ -65,6 +67,7 @@
     smartparens
     smex
     surround
+    use-package
     yasnippet
     ))
 
@@ -82,12 +85,15 @@
 ;; Unpackaged elisp
 (add-to-list 'load-path "~/.emacs.d/vendor/")
 
+;; use-package
+(require 'use-package)
+
 ;; General settings
 (require 'kluge-settings)
 
 ;; Evil (Extensible Vi Layer)
 (require 'kluge-evil)
-(require 'evil-indent-textobject)
+(use-package evil-indent-textobject)
 
 ;; Acejump
 (require 'kluge-ace-jump)
@@ -157,14 +163,17 @@
 (require 'kluge-smartparens)
 
 ;; Smex
-(require 'smex)
-(smex-initialize)
-(global-set-key (kbd "M-x") 'smex)
-(global-set-key (kbd "M-X") 'smex-major-mode-commands)
+(use-package smex
+  :init
+  (progn
+    (smex-initialize)
+    (global-set-key (kbd "M-x") 'smex)
+    (global-set-key (kbd "M-X") 'smex-major-mode-commands)))
 
 ;; Uniquify
-(require 'uniquify)
-(setq uniquify-buffer-name-style 'reverse)
+(use-package uniquify
+  :init
+  (setq uniquify-buffer-name-style 'reverse))
 
 ;; Winner-mode
 (winner-mode 1)
@@ -180,7 +189,25 @@
 (define-key evil-insert-state-map (kbd "<f5>") 'kluge-insert-date)
 
 ;; Diminish
-(require 'diminish)
-; Clean up modes that don't need to show on the modeline
-(diminish 'projectile-mode)
-(diminish 'undo-tree-mode)
+(use-package diminish
+  :init
+  (progn
+    ;; Clean up modes that don't need to show on the modeline
+    (diminish 'projectile-mode)
+    (diminish 'undo-tree-mode)))
+
+
+;; Emacs startup time measuring code from https://github.com/jwiegley/dot-emacs/blob/master/init.el
+(let ((elapsed (float-time (time-subtract (current-time)
+					  emacs-start-time))))
+  (message "Loading %s...done (%.3fs)" load-file-name elapsed))
+
+
+(add-hook 'after-init-hook
+	  `(lambda ()
+	     (let ((elapsed (float-time (time-subtract (current-time)
+						       emacs-start-time))))
+	       (message "Loading %s...done (%.3fs) [after-init]"
+			,load-file-name elapsed)))
+	  t)
+

@@ -1,9 +1,11 @@
-(require 'auto-complete-config)
-(add-to-list 'ac-dictionary-directories "~/.emacs.d/dict")
-(ac-config-default)
-(global-auto-complete-mode t)
-(add-to-list 'ac-modes 'asm-mode)
-
-(setq ac-ignore-case nil) ; don't ignore case
+(use-package auto-complete-config
+  :init
+  (progn 
+    (add-to-list 'ac-dictionary-directories "~/.emacs.d/dict")
+    (ac-config-default)
+    (global-auto-complete-mode t)
+    (add-to-list 'ac-modes 'asm-mode)
+    ;; don't ignore case
+    (setq ac-ignore-case nil)))
 
 (provide 'kluge-auto-complete)
