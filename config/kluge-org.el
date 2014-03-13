@@ -28,7 +28,7 @@
 	     "* %?\n%U\n%i\n")
 	    ("m" "Note with link" entry (file "~/org/inbox.org")
 	     "* %?\n%U\n%i\n%a")
-	    ("j" "Journal" entry (file+datetree "~/journal/2013.org")
+	    ("j" "Journal" entry (file+datetree "~/journal/2014.org")
 	     "* %U\n%?")))
 
     ;; Habit tracking
@@ -73,6 +73,11 @@
 
     ;; Start in insert state in capture mode
     (add-hook 'org-capture-mode-hook 'evil-insert-state)
+
+    ;; j and k for movement in agenda
+    (define-key org-agenda-mode-map (kbd "j") 'org-agenda-next-line)
+    (define-key org-agenda-mode-map (kbd "k") 'org-agenda-previous-line)
+    (define-key org-agenda-mode-map (kbd "J") 'org-agenda-goto-date)
 
     ;; Go to Emacs state for org-goto
     (defun kluge-emacs-state-in-org-goto ()
