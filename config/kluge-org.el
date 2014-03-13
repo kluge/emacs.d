@@ -74,10 +74,12 @@
     ;; Start in insert state in capture mode
     (add-hook 'org-capture-mode-hook 'evil-insert-state)
 
-    ;; j and k for movement in agenda
-    (define-key org-agenda-mode-map (kbd "j") 'org-agenda-next-line)
-    (define-key org-agenda-mode-map (kbd "k") 'org-agenda-previous-line)
-    (define-key org-agenda-mode-map (kbd "J") 'org-agenda-goto-date)
+    (eval-after-load "org-agenda"
+      '(progn
+	;; j and k for movement in agenda
+	(define-key org-agenda-mode-map (kbd "j") 'org-agenda-next-line)
+	(define-key org-agenda-mode-map (kbd "k") 'org-agenda-previous-line)
+	(define-key org-agenda-mode-map (kbd "J") 'org-agenda-goto-date)))
 
     ;; Go to Emacs state for org-goto
     (defun kluge-emacs-state-in-org-goto ()
