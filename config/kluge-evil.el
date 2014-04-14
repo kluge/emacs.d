@@ -20,8 +20,9 @@
     ;; C-k for killing the line, I don't remember ever using digraphs
     (define-key evil-insert-state-map (kbd "C-k") 'kill-line)
 
-    ;; M-d for scrolling up in motion state
-    (define-key evil-motion-state-map (kbd "M-d") 'evil-scroll-up)
+    ;; M-d for scrolling up, C-d for scrolling down
+    (global-set-key (kbd "M-d") 'evil-scroll-up)
+    (global-set-key (kbd "C-d") 'evil-scroll-down)
 
     ;; Indent on newline
     (define-key evil-insert-state-map (kbd "RET") 'evil-ret-and-indent)
