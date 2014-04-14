@@ -37,6 +37,10 @@
     (define-key evil-normal-state-map (kbd "M-.") nil)
     (define-key evil-normal-state-map (kbd "C-,") 'evil-repeat-pop-next)
 
+    ;; Restore visual selection after shifting
+    (define-key evil-visual-state-map (kbd "<") 'kluge-shift-left-and-restore-visual)
+    (define-key evil-visual-state-map (kbd ">") 'kluge-shift-right-and-restore-visual)
+
     ;; Normal state ! for filtering text with shell commands
     ;; from https://gist.github.com/cofi/7589306
     (defun evil-filter (count)
@@ -91,5 +95,19 @@
   (interactive)
   (split-window-below)
   (evil-window-down 1))
+
+(evil-define-operator kluge-shift-left-and-restore-visual (beg end &optional count)
+  :type line
+  (interactive "<r><vc>")
+  (evil-shift-left beg end (or count 1))
+  (evil-normal-state) ; needed for some reason?
+  (evil-visual-restore))
+
+(evil-define-operator kluge-shift-right-and-restore-visual (beg end &optional count)
+  :type line
+  (interactive "<r><vc>")
+  (evil-shift-right beg end (or count 1))
+  (evil-normal-state) ; needed for some reason?
+  (evil-visual-restore))
 
 (provide 'kluge-evil)
