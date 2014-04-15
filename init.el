@@ -38,7 +38,7 @@
   '(ace-jump-mode
     ack-and-a-half
     auctex
-    auto-complete
+    company
     diminish
     ensime
     epc
@@ -56,7 +56,6 @@
     ido
     ido-ubiquitous
     ido-vertical-mode
-    jedi
     magit
     multiple-cursors
     org
@@ -108,12 +107,10 @@
 (require 'kluge-auctex)
 
 ;; YASnippet
-;; load before auto-complete to allow interoperation
 (require 'kluge-yasnippet)
 
-;; Auto Complete
-;; load after yasnippet to allow interoperation
-(require 'kluge-auto-complete)
+;; Company
+(require 'kluge-company)
 
 ;; Emacs Lisp
 (require 'kluge-elisp)
@@ -129,12 +126,6 @@
 
 ;; Ido
 (require 'kluge-ido)
-
-;; Jedi
-(autoload 'jedi:ac-setup "jedi" nil t)
-; Provide auto completion in python-mode
-(add-hook 'python-mode-hook 'auto-complete-mode)
-(add-hook 'python-mode-hook 'jedi:ac-setup)
 
 ;; Org
 (require 'kluge-org)
