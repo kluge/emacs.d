@@ -35,6 +35,7 @@
 (defvar peakburn-colors-alist
   '(("peakburn-fg"       . "#D0D0D0")
     ("peakburn-fg-1"     . "#B0B0B0")
+    ("peakburn-fg-2"     . "#707070")
     ("peakburn-bg-1"     . "#101010")
     ("peakburn-bg-05"    . "#181818")
     ("peakburn-bg"       . "#202020")
@@ -186,6 +187,15 @@ Also bind `class' to ((class color) (min-colors 89))."
    `(popup-scroll-bar-foreground-face ((t (:background ,peakburn-blue-4))))
    `(popup-scroll-bar-background-face ((t (:background ,peakburn-bg-1))))
    `(popup-isearch-match ((t (:background ,peakburn-bg :foreground ,peakburn-fg))))
+;;;;; company
+   `(company-tooltip ((t (:background ,peakburn-bg+3 :foreground "black"))))
+   `(company-tooltip-selection ((t (:background ,peakburn-blue-3 :foreground ,peakburn-fg))))
+   `(company-tooltip-common ((t (:foreground "black"))))
+   `(company-tooltip-common-selection ((t (:foreground ,peakburn-fg))))
+   `(company-scrollbar-fg ((t (:background ,peakburn-blue-4))))
+   `(company-scrollbar-bg ((t (:background ,peakburn-bg-1))))
+   `(company-preview ((t (:background ,peakburn-bg+1 :foreground ,peakburn-fg-2))))
+   `(company-preview-common ((t (:background ,peakburn-bg+1 :foreground ,peakburn-fg-2))))
 ;;;;; diff
    `(diff-added ((,class (:foreground ,peakburn-green+4 :background nil))
                  (t (:foreground ,peakburn-green-1 :background nil))))
