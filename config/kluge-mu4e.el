@@ -32,7 +32,11 @@
     (setq mu4e-date-format-long "%A %Y-%m-%d %T %z (%Z)")
 
     ;; HTML mails
-    (setq mu4e-html2text-command "w3m -dump -T text/html")
+    (setq mu4e-html2text-command
+	  (cond
+	   ((executable-find "pandoc") "pandoc --columns=72 -f html -t markdown")
+	   ((executable-find "html2text") "html2text -utf8 -width 72")
+	   (t "w3m -dump -T text/html")))
 
     ;; Don't keep sent message buffers around
     (setq message-kill-buffer-on-exit t)
