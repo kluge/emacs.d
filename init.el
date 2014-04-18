@@ -51,6 +51,7 @@
     flx-ido
     flycheck
     ghc
+    google-this
     goto-chg
     haskell-mode
     ido
@@ -120,6 +121,9 @@
 
 ;; Flycheck
 (require 'kluge-flycheck)
+
+;; Google this
+(require 'kluge-google-this)
 
 ;; Haskell
 (require 'kluge-haskell)
