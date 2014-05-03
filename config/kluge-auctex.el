@@ -1,6 +1,6 @@
 (use-package tex-site
   :mode ("\\.tex\\'" . latex-mode)
-  :init
+  :config
   (progn 
     ;; Style awareness
     (setq TeX-auto-save t)
@@ -25,7 +25,9 @@
     (setq TeX-view-program-selection '((output-pdf "Okular")))
 
     ;; Autocompletion from https://github.com/monsanto/auto-complete-auctex
-    (require 'auto-complete-auctex)
+    (use-package auto-complete-auctex
+      :commands ac-auctex-setup
+      :init (add-hook 'LaTeX-mode-hook 'ac-auctex-setup))
 
     ;; Word wrapping for Latex
     (add-hook 'LaTeX-mode-hook 'turn-on-auto-fill)
