@@ -1,5 +1,7 @@
 (defconst emacs-start-time (current-time))
 
+(require 'benchmark-init nil t)
+
 ;; Disable extraneous GUI
 (menu-bar-mode -1)
 (tool-bar-mode -1)
@@ -38,6 +40,7 @@
   '(ace-jump-mode
     ack-and-a-half
     auctex
+    benchmark-init
     company
     diminish
     ensime
@@ -78,12 +81,12 @@
 ;; Load config from separate files
 (add-to-list 'load-path "~/.emacs.d/config/")
 
+;; Unpackaged elisp
+(add-to-list 'load-path "~/.emacs.d/vendor/")
+
 ;; Save customizations to a separate file
 (setq custom-file "~/.emacs.d/custom.el")
 (load custom-file)
-
-;; Unpackaged elisp
-(add-to-list 'load-path "~/.emacs.d/vendor/")
 
 ;; use-package
 (require 'use-package)
@@ -106,6 +109,10 @@
 
 ;; Auctex
 (require 'kluge-auctex)
+
+;; Benchmark-init-modes
+(use-package benchmark-init-modes
+  :commands (benchmark-init/show-durations-tabulated))
 
 ;; YASnippet
 (require 'kluge-yasnippet)
