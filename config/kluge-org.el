@@ -86,7 +86,9 @@
       (when (equal (buffer-name (current-buffer)) "*org-goto*")
 	(evil-emacs-state)))
 
-    (add-hook 'org-mode-hook 'kluge-emacs-state-in-org-goto)))
+    (add-hook 'org-mode-hook 'kluge-emacs-state-in-org-goto)
+    ;; Don't confirm following vlc links
+    (setq org-confirm-shell-link-not-regexp "vlc")))
 
 ;; Commands
 (evil-define-command kluge-org-meta-return (&optional count argument)
