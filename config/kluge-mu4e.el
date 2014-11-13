@@ -37,6 +37,8 @@
 	   ((executable-find "pandoc") "pandoc --columns=72 -f html -t markdown")
 	   ((executable-find "html2text") "html2text -utf8 -width 72")
 	   (t "w3m -dump -T text/html")))
+    (add-to-list 'mu4e-view-actions
+		 '("ViewInBrowser" . mu4e-action-view-in-browser) t)
 
     ;; Don't keep sent message buffers around
     (setq message-kill-buffer-on-exit t)
