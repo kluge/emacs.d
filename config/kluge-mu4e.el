@@ -37,8 +37,6 @@
 	   ((executable-find "pandoc") "pandoc --columns=72 -f html -t markdown")
 	   ((executable-find "html2text") "html2text -utf8 -width 72")
 	   (t "w3m -dump -T text/html")))
-    (add-to-list 'mu4e-view-actions
-		 '("ViewInBrowser" . mu4e-action-view-in-browser) t)
 
     ;; Don't keep sent message buffers around
     (setq message-kill-buffer-on-exit t)
@@ -49,6 +47,10 @@
     (evil-set-initial-state 'mu4e-view-mode 'emacs))
   :config
   (progn
+    ;; View in browser
+    (add-to-list 'mu4e-view-actions
+		 '("ViewInBrowser" . mu4e-action-view-in-browser) t)
+
     ;; Use f for going to a folder
     (define-key mu4e-main-mode-map (kbd "f") 'mu4e~headers-jump-to-maildir)
     (define-key mu4e-headers-mode-map (kbd "f") 'mu4e~headers-jump-to-maildir)
