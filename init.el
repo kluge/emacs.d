@@ -29,8 +29,9 @@
 (setq package-enable-at-startup nil) ; don't run package-initialize again after loading init.el
 (package-initialize)
 
-(when (not package-archive-contents)
-  (package-refresh-contents))
+(unless (package-installed-p 'use-package)
+  (package-refresh-contents)
+  (package-install 'use-package))
 
 ;; Load config from separate files
 (add-to-list 'load-path "~/.emacs.d/config/")
