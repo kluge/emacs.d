@@ -89,11 +89,14 @@
        (define-key org-agenda-mode-map (kbd "J") 'org-agenda-goto-date)))
 
   ;; Go to Emacs state for org-goto
-  (defun kluge-emacs-state-in-org-goto ()
-    (when (equal (buffer-name (current-buffer)) "*org-goto*")
-      (evil-emacs-state)))
+  ;; (gotten from http://emacs.stackexchange.com/questions/883/using-evil-mode-with-a-function-that-does-not-work-well-with-evil-mode)
+  (defadvice org-goto (around org-goto-evil-emacs-state activate)
+    (let ((orig-state evil-state)
+  	  (evil-emacs-state-modes (cons 'org-mode evil-emacs-state-modes)))
+      ad-do-it
+      (evil-change-state orig-state)))
 
-  (add-hook 'org-mode-hook 'kluge-emacs-state-in-org-goto)
+
   ;; Don't confirm following vlc links
   (setq org-confirm-shell-link-not-regexp "vlc"))
 
@@ -111,6 +114,5 @@
   (end-of-line)
   (org-insert-todo-heading argument)
   (evil-insert 1))
-
 
 (provide 'kluge-org)
