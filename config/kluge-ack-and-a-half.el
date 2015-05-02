@@ -1,4 +1,5 @@
 (use-package ack-and-a-half
+  :disabled t
   :commands
   (ack ack-same ack-find-file ack-find-file-same)
   :init

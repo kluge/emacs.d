@@ -1,4 +1,5 @@
 (use-package haskell-mode
+  :ensure t
   :commands haskell-mode
   :mode "\\.l?hs$"
   :init
@@ -19,6 +20,7 @@
 
     ;; Use ghc-mod
     (use-package ghc
+      :ensure t
       :init
       (add-hook 'haskell-mode-hook 'ghc-init))))
 

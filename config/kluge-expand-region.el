@@ -1,4 +1,5 @@
 (use-package expand-region
+  :ensure t
   :init
   (progn 
     ;; Efficient bindings stolen from http://blog.binchen.org/?p=782

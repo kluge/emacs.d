@@ -1,4 +1,5 @@
 (use-package multiple-cursors
+  :ensure t
   :commands
   (mc/mark-next-like-this mc/mark-previous-like-this mc/mark-all-like-this-dwim)
   :init

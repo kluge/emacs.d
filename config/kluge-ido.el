@@ -1,8 +1,11 @@
 (use-package ido
+  :ensure t
   :init
   (progn 
-    (use-package ido-ubiquitous)
-    (use-package flx-ido)
+    (use-package ido-ubiquitous
+      :ensure t)
+    (use-package flx-ido
+      :ensure t)
 
     ;; Ido everywhere with better flex matching
     (setq ido-enable-flex-matching t)

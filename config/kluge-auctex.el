@@ -1,4 +1,5 @@
 (use-package tex-site
+  :ensure auctex
   :mode ("\\.tex\\'" . latex-mode)
   :config
   (progn 
@@ -25,7 +26,9 @@
     (setq TeX-view-program-selection '((output-pdf "Okular")))
 
     ;; Autocompletion from https://github.com/monsanto/auto-complete-auctex
+    ;; (not in use since switch to company)
     (use-package auto-complete-auctex
+      :disabled t
       :commands ac-auctex-setup
       :init (add-hook 'LaTeX-mode-hook 'ac-auctex-setup))
 

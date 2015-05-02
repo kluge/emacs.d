@@ -1,5 +1,6 @@
 (use-package yasnippet
-  :init
+  :ensure t
+  :config
   (progn 
     ;; Less verbosity
     (setq yas-verbosity 1)

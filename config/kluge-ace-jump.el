@@ -1,4 +1,5 @@
 (use-package ace-jump-mode
+  :ensure t
   :commands
   (evil-ace-jump-char-mode evil-ace-jump-char-to-mode evil-ace-jump-line-mode)
   :init

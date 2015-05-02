@@ -1,8 +1,10 @@
 (use-package scala-mode2
+  :ensure t
   :mode ("\\.scala$" . scala-mode)
   :init
   (progn
     (use-package ensime
+      :ensure t
       :commands ensime-scala-mode-hook)
 
     (add-hook 'scala-mode-hook

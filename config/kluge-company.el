@@ -1,4 +1,5 @@
 (use-package company
+  :ensure t
   :init
   (progn
     (setq company-idle-delay 0)

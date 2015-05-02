@@ -1,4 +1,5 @@
 (use-package smartparens-config
+  :ensure smartparens
   :init	
   (progn
     (smartparens-global-mode t)

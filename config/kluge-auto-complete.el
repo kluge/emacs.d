@@ -1,4 +1,6 @@
 (use-package auto-complete-config
+  :disabled t
+  :ensure auto-complete
   :init
   (progn 
     (add-to-list 'ac-dictionary-directories "~/.emacs.d/dict")

@@ -5,83 +5,89 @@
 (setq evilnc-hotkey-comment-operator "gc")
 
 (use-package evil
+  :ensure t
   :init
-  (progn
-    (evil-mode 1)   ; enable Evil
+  ;; Evil leader
+  (use-package evil-leader
+    :ensure t
+    :config
+    (progn
+      (global-evil-leader-mode)
+      (evil-leader/set-leader "ö")
 
-    ;; Red cursor for Emacs state
-    (setq evil-emacs-state-cursor '("#cc4444" box))
+      (evil-leader/set-key
+	"a" 'align-regexp
+	"i" 'imenu
+	"w" 'kluge-write-whole-file
+	"W" 'evil-write-all
+	"h" 'kluge-horizontal-split
+	"v" 'kluge-vertical-split)))
 
-    ;; Y yanks to the end of the line
-    (define-key evil-normal-state-map "Y" (kbd "y$"))
+  :config
+  (evil-mode 1)   ; enable Evil
 
-    ;; C-e for end of line in insert state
-    (define-key evil-insert-state-map (kbd "C-e") 'end-of-line)
-    ;; C-k for killing the line, I don't remember ever using digraphs
-    (define-key evil-insert-state-map (kbd "C-k") 'kill-line)
+  ;; Red cursor for Emacs state
+  (setq evil-emacs-state-cursor '("#cc4444" box))
+  (setq evil-normal-state-cursor '("#00ff00" box))
+  (setq evil-insert-state-cursor '("#00ff00" (bar . 2)))
 
-    ;; M-d for scrolling up, C-d for scrolling down
-    (global-set-key (kbd "M-d") 'evil-scroll-up)
-    (global-set-key (kbd "C-d") 'evil-scroll-down)
+  ;; Y yanks to the end of the line
+  (define-key evil-normal-state-map "Y" (kbd "y$"))
 
-    ;; Indent on newline
-    (define-key evil-insert-state-map (kbd "RET") 'evil-ret-and-indent)
+  ;; C-e for end of line in insert state
+  (define-key evil-insert-state-map (kbd "C-e") 'end-of-line)
+  ;; C-k for killing the line, I don't remember ever using digraphs
+  (define-key evil-insert-state-map (kbd "C-k") 'kill-line)
 
-    ;; Opening file in other window
-    ;;(evil binds to 'ffap-other-window, which is not remapped by ido)
-    (define-key evil-window-map (kbd "C-f") 'find-file-other-window)
+  ;; M-d for scrolling up, C-d for scrolling down
+  (global-set-key (kbd "M-d") 'evil-scroll-up)
+  (global-set-key (kbd "C-d") 'evil-scroll-down)
 
-    ;; Switch to buffer in other window
-    (define-key evil-window-map (kbd "C-b") 'ido-switch-buffer-other-window)
+  ;; Indent on newline
+  (define-key evil-insert-state-map (kbd "RET") 'evil-ret-and-indent)
 
-    ;; Don't override M-., it is useful. Rotate the repeat ring with C-, instead.
-    (define-key evil-normal-state-map (kbd "M-.") nil)
-    (define-key evil-normal-state-map (kbd "C-,") 'evil-repeat-pop-next)
+  ;; Opening file in other window
+  ;;(evil binds to 'ffap-other-window, which is not remapped by ido)
+  (define-key evil-window-map (kbd "C-f") 'find-file-other-window)
 
-    ;; Restore visual selection after shifting
-    (define-key evil-visual-state-map (kbd "<") 'kluge-shift-left-and-restore-visual)
-    (define-key evil-visual-state-map (kbd ">") 'kluge-shift-right-and-restore-visual)
+  ;; Switch to buffer in other window
+  (define-key evil-window-map (kbd "C-b") 'ido-switch-buffer-other-window)
 
-    ;; Normal state ! for filtering text with shell commands
-    ;; from https://gist.github.com/cofi/7589306
-    (defun evil-filter (count)
-      (interactive "p")
-      (evil-ex (if current-prefix-arg
-		   (format ".,+%d!" count)
-		 ".!")))
-    
-    (define-key evil-normal-state-map (kbd "!") #'evil-filter)
+  ;; Don't override M-., it is useful. Rotate the repeat ring with C-, instead.
+  (define-key evil-normal-state-map (kbd "M-.") nil)
+  (define-key evil-normal-state-map (kbd "C-,") 'evil-repeat-pop-next)
 
-    ;; Evil leader
-    (use-package evil-leader
-      :init
-      (progn
-	(global-evil-leader-mode)
-	(evil-leader/set-leader "ö")
+  ;; Restore visual selection after shifting
+  (define-key evil-visual-state-map (kbd "<") 'kluge-shift-left-and-restore-visual)
+  (define-key evil-visual-state-map (kbd ">") 'kluge-shift-right-and-restore-visual)
 
-	(evil-leader/set-key
-	  "a" 'align-regexp
-	  "i" 'imenu
-	  "w" 'kluge-write-whole-file
-	  "W" 'evil-write-all
-	  "h" 'kluge-horizontal-split
-	  "v" 'kluge-vertical-split)))
+  ;; Normal state ! for filtering text with shell commands
+  ;; from https://gist.github.com/cofi/7589306
+  (defun evil-filter (count)
+    (interactive "p")
+    (evil-ex (if current-prefix-arg
+		 (format ".,+%d!" count)
+	       ".!")))
+  
+  (define-key evil-normal-state-map (kbd "!") #'evil-filter)
 
-    ;; Surround
-    (use-package surround
-      :init
-      (global-surround-mode 1))
+  ;; Surround
+  (use-package evil-surround
+    :config
+    (global-evil-surround-mode 1))
 
-    ;; Evil nerd-commenter
-    (use-package evil-nerd-commenter)
+  ;; Evil nerd-commenter
+  (use-package evil-nerd-commenter
+    :ensure t)
 
-    ;; Evil matchit
-    (use-package evil-matchit
-      :init
-      (progn
-	(defun evilmi-customize-keybinding ()
-	  (define-key evil-normal-state-map "%" 'evilmi-jump-items))
-	(global-evil-matchit-mode 1)))))
+  ;; Evil matchit
+  (use-package evil-matchit
+    :ensure t
+    :config
+    (progn
+      (defun evilmi-customize-keybinding ()
+	(define-key evil-normal-state-map "%" 'evilmi-jump-items))
+      (global-evil-matchit-mode 1))))
 
 (defun kluge-write-whole-file ()
   (interactive)

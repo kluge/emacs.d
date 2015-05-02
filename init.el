@@ -1,7 +1,5 @@
 (defconst emacs-start-time (current-time))
 
-(require 'benchmark-init nil t)
-
 ;; Disable extraneous GUI
 (menu-bar-mode -1)
 (tool-bar-mode -1)
@@ -27,56 +25,12 @@
 ;; Set up the package system
 (require 'package)
 (add-to-list 'package-archives
-	     '("marmalade" . "http://marmalade-repo.org/packages/") t)
-(add-to-list 'package-archives
              '("melpa" . "http://melpa.milkbox.net/packages/") t)
+(setq package-enable-at-startup nil) ; don't run package-initialize again after loading init.el
 (package-initialize)
 
 (when (not package-archive-contents)
   (package-refresh-contents))
-
-;; Install the packages, if they're not already installed
-(defvar my-packages
-  '(ace-jump-mode
-    ack-and-a-half
-    auctex
-    benchmark-init
-    company
-    diminish
-    ensime
-    epc
-    evil
-    evil-indent-textobject
-    evil-leader
-    evil-matchit
-    evil-nerd-commenter
-    expand-region
-    flx-ido
-    flycheck
-    ghc
-    google-this
-    goto-chg
-    haskell-mode
-    ido
-    ido-ubiquitous
-    ido-vertical-mode
-    magit
-    multiple-cursors
-    org
-    projectile
-    rainbow-mode
-    scala-mode2
-    smart-mode-line
-    smartparens
-    smex
-    surround
-    use-package
-    yasnippet
-    ))
-
-(dolist (p my-packages)
-  (when (not (package-installed-p p))
-    (package-install p)))
 
 ;; Load config from separate files
 (add-to-list 'load-path "~/.emacs.d/config/")
@@ -90,13 +44,13 @@
 
 ;; use-package
 (require 'use-package)
+(setq use-package-verbose t)
 
 ;; General settings
 (require 'kluge-settings)
 
 ;; Evil (Extensible Vi Layer)
 (require 'kluge-evil)
-(use-package evil-indent-textobject)
 
 ;; Acejump
 (require 'kluge-ace-jump)
@@ -109,10 +63,6 @@
 
 ;; Auctex
 (require 'kluge-auctex)
-
-;; Benchmark-init-modes
-(use-package benchmark-init-modes
-  :commands (benchmark-init/show-durations-tabulated))
 
 ;; YASnippet
 (require 'kluge-yasnippet)
@@ -166,6 +116,7 @@
 
 ;; Smex
 (use-package smex
+  :ensure t
   :init
   (progn
     (smex-initialize)
@@ -192,7 +143,8 @@
 
 ;; Diminish
 (use-package diminish
-  :init
+  :ensure t
+  :config
   (progn
     ;; Clean up modes that don't need to show on the modeline
     (diminish 'projectile-mode)
