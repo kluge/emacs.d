@@ -87,7 +87,13 @@
     (progn
       (defun evilmi-customize-keybinding ()
 	(define-key evil-normal-state-map "%" 'evilmi-jump-items))
-      (global-evil-matchit-mode 1))))
+      (global-evil-matchit-mode 1)))
+
+  ;; Evil jumper (jumps between buffers)
+  (use-package evil-jumper
+    :ensure t
+    :config
+    (global-evil-jumper-mode 1)))
 
 (defun kluge-write-whole-file ()
   (interactive)
