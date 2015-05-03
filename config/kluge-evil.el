@@ -55,7 +55,7 @@
   (define-key evil-window-map (kbd "C-f") 'find-file-other-window)
 
   ;; Switch to buffer in other window
-  (define-key evil-window-map (kbd "C-b") 'ido-switch-buffer-other-window)
+  (define-key evil-window-map (kbd "C-b") 'switch-to-buffer-other-window)
 
   ;; Don't override M-., it is useful. Rotate the repeat ring with C-, instead.
   (define-key evil-normal-state-map (kbd "M-.") nil)

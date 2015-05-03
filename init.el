@@ -90,6 +90,9 @@
 ;; Ido
 (require 'kluge-ido)
 
+;; Ivy and Swiper
+(require 'kluge-ivy)
+
 ;; Org
 (require 'kluge-org)
 
@@ -118,6 +121,7 @@
 
 ;; Smex
 (use-package smex
+  :disabled t ; until it supports ivy-mode
   :ensure t
   :init
   (progn

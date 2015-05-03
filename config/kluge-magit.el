@@ -14,6 +14,8 @@
     "g d" 'vc-diff)
 
   :config
+  ;; Use ivy
+  (setq magit-completing-read-function 'ivy-completing-read)
   ;; j and k for movement
   (define-key magit-mode-map (kbd "j") 'magit-goto-next-section)
   (define-key magit-mode-map (kbd "k") 'magit-goto-previous-section)

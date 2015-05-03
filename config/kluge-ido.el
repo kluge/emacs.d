@@ -1,4 +1,5 @@
 (use-package ido
+  :disabled t
   :ensure t
   :init
   (progn 
