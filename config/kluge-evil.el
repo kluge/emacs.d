@@ -46,6 +46,10 @@
   ;; Indent on newline
   (define-key evil-insert-state-map (kbd "RET") 'evil-ret-and-indent)
 
+  ;; Keybindings for moving between matches in search results and such
+  (define-key evil-normal-state-map (kbd "M-j") 'next-error)
+  (define-key evil-normal-state-map (kbd "M-k") 'previous-error)
+
   ;; Opening file in other window
   ;;(evil binds to 'ffap-other-window, which is not remapped by ido)
   (define-key evil-window-map (kbd "C-f") 'find-file-other-window)

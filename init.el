@@ -57,8 +57,8 @@
 ;; Acejump
 (require 'kluge-ace-jump)
 
-;; Ack and a half
-(require 'kluge-ack-and-a-half)
+;; Ag (Silver searcher)
+(require 'kluge-ag)
 
 ;; Ansi-term
 (require 'kluge-ansi-term)
