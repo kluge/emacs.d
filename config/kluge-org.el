@@ -1,5 +1,6 @@
 (use-package org
   :ensure t
+  :defer 5
   :init
   ;; Org file paths
   (setq org-agenda-files '("~/org"))
@@ -78,9 +79,6 @@
     (kbd "M-K") 'org-shiftmetaup
     (kbd "M-J") 'org-shiftmetadown)
 
-  ;; Start in insert state in capture mode
-  (add-hook 'org-capture-mode-hook 'evil-insert-state)
-
   (eval-after-load "org-agenda"
     '(progn
        ;; j and k for movement in agenda
@@ -88,17 +86,20 @@
        (define-key org-agenda-mode-map (kbd "k") 'org-agenda-previous-line)
        (define-key org-agenda-mode-map (kbd "J") 'org-agenda-goto-date)))
 
+  ;; Don't confirm following vlc links
+  (setq org-confirm-shell-link-not-regexp "vlc")
+
+  :config
+  ;; Start in insert state in capture mode
+  (add-hook 'org-capture-mode-hook 'evil-insert-state)
+
   ;; Go to Emacs state for org-goto
   ;; (gotten from http://emacs.stackexchange.com/questions/883/using-evil-mode-with-a-function-that-does-not-work-well-with-evil-mode)
   (defadvice org-goto (around org-goto-evil-emacs-state activate)
     (let ((orig-state evil-state)
   	  (evil-emacs-state-modes (cons 'org-mode evil-emacs-state-modes)))
       ad-do-it
-      (evil-change-state orig-state)))
-
-
-  ;; Don't confirm following vlc links
-  (setq org-confirm-shell-link-not-regexp "vlc"))
+      (evil-change-state orig-state))))
 
 ;; Commands
 (evil-define-command kluge-org-meta-return (&optional count argument)

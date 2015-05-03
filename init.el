@@ -46,6 +46,7 @@
 ;; use-package
 (require 'use-package)
 (setq use-package-verbose t)
+(setq use-package-minimum-reported-time 0.05)
 
 ;; General settings
 (require 'kluge-settings)

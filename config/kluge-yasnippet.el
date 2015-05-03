@@ -1,10 +1,10 @@
 (use-package yasnippet
   :ensure t
+  :defer 5
   :config
-  (progn 
-    ;; Less verbosity
-    (setq yas-verbosity 1)
-    (yas-global-mode 1)))
+  ;; Less verbosity
+  (setq yas-verbosity 1)
+  (yas-global-mode 1))
 
 
 (provide 'kluge-yasnippet)

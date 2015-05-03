@@ -1,8 +1,9 @@
 (use-package magit
   :ensure t
+  :defer t
   :init
   (setq magit-last-seen-setup-instructions "1.4.0")
-  :config
+
   ;; Global key to invoke magit
   (global-set-key (kbd "C-c m") 'magit-status)
 
@@ -12,6 +13,7 @@
     "g l" 'magit-log
     "g d" 'vc-diff)
 
+  :config
   ;; j and k for movement
   (define-key magit-mode-map (kbd "j") 'magit-goto-next-section)
   (define-key magit-mode-map (kbd "k") 'magit-goto-previous-section)
