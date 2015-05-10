@@ -1,3 +1,6 @@
+# Backup files
+*~
+\#*\#
 # Emacs directories
 auto-save-list/
 backups/
@@ -10,3 +13,5 @@ projectile-bookmarks.eld
 eshell/history
 eshell/lastdir
 /saved-places
+ido.last
+smex-items

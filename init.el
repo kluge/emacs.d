@@ -22,6 +22,9 @@
 (add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
 (load-theme 'peakburn t)
 
+;; Set encoding (has to happen before package loading on Windows)
+(prefer-coding-system 'utf-8)
+
 ;; Set up the package system
 (require 'package)
 (add-to-list 'package-archives
