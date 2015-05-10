@@ -1,8 +1,6 @@
 ;; Use C-w for window commands even in Emacs state
 (setq evil-want-C-w-in-emacs-state t)
 
-;; Use gc as the comment operator
-(setq evilnc-hotkey-comment-operator "gc")
 
 (use-package evil
   :ensure t
@@ -77,12 +75,16 @@
 
   ;; Surround
   (use-package evil-surround
+    :ensure t
     :config
     (global-evil-surround-mode 1))
 
   ;; Evil nerd-commenter
   (use-package evil-nerd-commenter
-    :ensure t)
+    :ensure t
+    :init
+    ;; Use gc as the comment operator
+    (setq evilnc-hotkey-comment-operator "gc"))
 
   ;; Evil matchit
   (use-package evil-matchit
