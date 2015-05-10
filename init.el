@@ -111,6 +111,9 @@
 ;; Multiple cursors
 (require 'kluge-multiple-cursors)
 
+;; Paradox (a better package menu)
+(require 'kluge-paradox)
+
 ;; Scala
 (require 'kluge-scala)
 

@@ -1,7 +1,6 @@
 ;; Use C-w for window commands even in Emacs state
 (setq evil-want-C-w-in-emacs-state t)
 
-
 (use-package evil
   :ensure t
   :init
@@ -9,17 +8,16 @@
   (use-package evil-leader
     :ensure t
     :config
-    (progn
-      (global-evil-leader-mode)
-      (evil-leader/set-leader "ö")
+    (global-evil-leader-mode)
+    (evil-leader/set-leader "ö")
 
-      (evil-leader/set-key
-	"a" 'align-regexp
-	"i" 'imenu
-	"w" 'kluge-write-whole-file
-	"W" 'evil-write-all
-	"h" 'kluge-horizontal-split
-	"v" 'kluge-vertical-split)))
+    (evil-leader/set-key
+      "a" 'align-regexp
+      "m" 'imenu
+      "w" 'kluge-write-whole-file
+      "W" 'evil-write-all
+      "h" 'kluge-horizontal-split
+      "v" 'kluge-vertical-split))
 
   :config
   (evil-mode 1)   ; enable Evil
@@ -99,7 +97,11 @@
   (use-package evil-jumper
     :ensure t
     :config
-    (global-evil-jumper-mode 1)))
+    (global-evil-jumper-mode 1))
+  (use-package evil-visualstar
+    :ensure t
+    :config
+    (global-evil-visualstar-mode 1)))
 
 (defun kluge-write-whole-file ()
   (interactive)
