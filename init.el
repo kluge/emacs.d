@@ -159,6 +159,9 @@
     (diminish 'projectile-mode)
     (diminish 'undo-tree-mode)))
 
+;; Change to %HOME% on windows
+(when (eq system-type 'windows-nt)
+    (cd (getenv "HOME")))
 
 ;; Emacs startup time measuring code from https://github.com/jwiegley/dot-emacs/blob/master/init.el
 (let ((elapsed (float-time (time-subtract (current-time)
