@@ -1,3 +1,11 @@
+(defun kluge-swiper ()
+  "Add swiper searches to the search ring to allow moving between
+  matches with n and N afterwards."
+  (interactive)
+  (swiper)
+  (setq isearch-forward t) ; treat swiper searches always as forward searches
+  (add-to-list 'regexp-search-ring (ivy--regex ivy-text)))
+
 (use-package swiper
   :ensure t
   :diminish ivy-mode
@@ -17,7 +25,6 @@
   (ivy-mode 1)
 
   ;; Swiper
-  (global-set-key (kbd "C-s") 'swiper)
-  (global-set-key (kbd "C-r") 'swiper))
+  (global-set-key (kbd "C-s") 'kluge-swiper))
 
 (provide 'kluge-ivy)

@@ -57,9 +57,6 @@
 ;; Evil (Extensible Vi Layer)
 (require 'kluge-evil)
 
-;; Acejump
-(require 'kluge-ace-jump)
-
 ;; Ag (Silver searcher)
 (require 'kluge-ag)
 
@@ -68,6 +65,9 @@
 
 ;; Auctex
 (require 'kluge-auctex)
+
+;; Avy (replacement for ace-jump)
+(require 'kluge-avy)
 
 ;; YASnippet
 (require 'kluge-yasnippet)
@@ -110,6 +110,9 @@
 
 ;; Multiple cursors
 (require 'kluge-multiple-cursors)
+
+;; Paradox (a better package menu)
+(require 'kluge-paradox)
 
 ;; Scala
 (require 'kluge-scala)
