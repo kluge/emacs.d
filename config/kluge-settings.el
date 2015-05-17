@@ -33,7 +33,7 @@
 
 ;; Code settings
 (set-default 'sentence-end-double-space nil) ; sentences don't need two spaces to end
-(setq indent-tabs-mode nil) ; use spaces to indent
+(setq-default indent-tabs-mode nil) ; use spaces to indent
 ; don't use tabs in align-regexp
 ; (from http://stackoverflow.com/questions/915985/in-emacs-how-to-line-up-equals-signs-in-a-series-of-initialization-statements)
 (defadvice align-regexp (around align-regexp-with-spaces)

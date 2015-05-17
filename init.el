@@ -60,6 +60,9 @@
 ;; Ag (Silver searcher)
 (require 'kluge-ag)
 
+;; Aggressive indent
+(require 'kluge-aggressive-indent)
+
 ;; Ansi-term
 (require 'kluge-ansi-term)
 
@@ -75,6 +78,9 @@
 ;; Company
 (require 'kluge-company)
 
+;; C++
+(require 'kluge-cpp)
+
 ;; Emacs Lisp
 (require 'kluge-elisp)
 
@@ -83,6 +89,9 @@
 
 ;; Flycheck
 (require 'kluge-flycheck)
+
+;; Ggtags
+(require 'kluge-ggtags)
 
 ;; Google this
 (require 'kluge-google-this)

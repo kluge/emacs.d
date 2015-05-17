@@ -4,6 +4,9 @@
   (setq company-idle-delay 0)
   (setq company-minimum-prefix-length 2)
 
+  ;; Don't use semantic
+  (delete 'company-semantic company-backends)
+
   ;; Case-sensitive completion in plain text
   (setq company-dabbrev-downcase nil)
 
