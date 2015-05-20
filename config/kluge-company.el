@@ -13,6 +13,11 @@
   ;; Move show location to C-l
   (define-key company-active-map (kbd "C-w") nil)
   (define-key company-active-map (kbd "C-l") 'company-show-location)
-  (global-company-mode 1))
+
+  (global-company-mode 1)
+  (use-package company-quickhelp
+    :ensure t
+    :config
+    (company-quickhelp-mode 1)))
 
 (provide 'kluge-company)

@@ -190,7 +190,7 @@ Also bind `class' to ((class color) (min-colors 89))."
 ;;;;; company
    `(company-tooltip ((t (:background ,peakburn-bg+3 :foreground "black"))))
    `(company-tooltip-selection ((t (:background ,peakburn-blue-3 :foreground ,peakburn-fg))))
-   `(company-tooltip-common ((t (:foreground "black"))))
+   `(company-tooltip-common ((t (:background ,peakburn-bg+3 :foreground "black"))))
    `(company-tooltip-common-selection ((t (:foreground ,peakburn-fg))))
    `(company-scrollbar-fg ((t (:background ,peakburn-blue-4))))
    `(company-scrollbar-bg ((t (:background ,peakburn-bg-1))))

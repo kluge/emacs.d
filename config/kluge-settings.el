@@ -30,6 +30,7 @@
 ; Also autorefresh dired without too much ceremony
 (setq global-auto-revert-non-file-buffers t)
 (setq auto-revert-verbose nil)
+(defalias 'yes-or-no-p 'y-or-n-p)
 
 ;; Code settings
 (set-default 'sentence-end-double-space nil) ; sentences don't need two spaces to end
