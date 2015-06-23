@@ -4,14 +4,24 @@
   (setq projectile-keymap-prefix (kbd "M-p"))
   :config
   (setq projectile-enable-caching t)
-  ;; Bind only ag, no grep
-  (define-key projectile-command-map (kbd "s") 'projectile-ag)
+  (setq projectile-indexing-method 'alien)
 
   (evil-leader/set-key
     "o" 'projectile-find-other-file)
 
   ;; Use ivy
-  (setq projectile-completion-system 'ivy)
+  (setq projectile-completion-system 'helm)
   (projectile-global-mode))
+
+(use-package helm-projectile
+  :ensure t
+  :config
+  (helm-projectile-on))
+
+(use-package helm-ag
+  :ensure t
+  :config
+  ;; Bind only ag, no grep
+  (define-key projectile-command-map (kbd "s") 'helm-ag))
 
 (provide 'kluge-projectile)

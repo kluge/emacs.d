@@ -1,5 +1,5 @@
 (defun kluge-set-flycheck-clang-std ()
-	      (setq-local flycheck-clang-language-standard "c++11"))
+  (setq-local flycheck-clang-language-standard "c++11"))
 
 (use-package flycheck
   :ensure t

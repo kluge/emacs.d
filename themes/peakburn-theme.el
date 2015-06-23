@@ -1,6 +1,6 @@
 ;;; peakburn-theme.el --- A color theme for Emacs.
 
-;; Copyright (C) 2013 Kari Oikarinen
+;; Copyright (C) 2013-2015 Kari Oikarinen
 ;; Copyright (C) 2011-2013 Bozhidar Batsov
 
 ;; This program is free software; you can redistribute it and/or modify
@@ -124,7 +124,53 @@ Also bind `class' to ((class color) (min-colors 89))."
    `(grep-error-face ((t (:foreground ,peakburn-red-1 :weight bold :underline t))))
    `(grep-hit-face ((t (:foreground ,peakburn-blue))))
    `(grep-match-face ((t (:foreground ,peakburn-orange :weight bold))))
-   `(match ((t (:background ,peakburn-bg-1 :foreground ,peakburn-orange :weight bold))))
+   `(match ((t (:backgrond ,peakburn-bg-1 :foreground ,peakburn-orange :weight bold))))
+;;;;; helm
+   `(helm-header
+     ((t (:foreground ,peakburn-green
+                      :background ,peakburn-bg
+                      :underline nil))))
+   `(helm-source-header
+     ((t (:foreground ,peakburn-yellow
+                      :background ,peakburn-bg-1
+                      :underline nil
+                      :weight bold))))
+   `(helm-selection ((t (:background ,peakburn-bg+1 :underline nil))))
+   `(helm-selection-line ((t (:background ,peakburn-bg+1))))
+   `(helm-visible-mark ((t (:foreground ,peakburn-bg :background ,peakburn-yellow-2))))
+   `(helm-candidate-number ((t (:foreground ,peakburn-green+4 :background ,peakburn-bg-1))))
+   `(helm-separator ((t (:foreground ,peakburn-red :background ,peakburn-bg))))
+   `(helm-time-zone-current ((t (:foreground ,peakburn-green+2 :background ,peakburn-bg))))
+   `(helm-time-zone-home ((t (:foreground ,peakburn-red :background ,peakburn-bg))))
+   `(helm-bookmark-addressbook ((t (:foreground ,peakburn-orange :background ,peakburn-bg))))
+   `(helm-bookmark-directory ((t (:foreground nil :background nil :inherit helm-ff-directory))))
+   `(helm-bookmark-file ((t (:foreground nil :background nil :inherit helm-ff-file))))
+   `(helm-bookmark-gnus ((t (:foreground ,peakburn-magenta :background ,peakburn-bg))))
+   `(helm-bookmark-info ((t (:foreground ,peakburn-green+2 :background ,peakburn-bg))))
+   `(helm-bookmark-man ((t (:foreground ,peakburn-yellow :background ,peakburn-bg))))
+   `(helm-bookmark-w3m ((t (:foreground ,peakburn-magenta :background ,peakburn-bg))))
+   `(helm-buffer-not-saved ((t (:foreground ,peakburn-red :background ,peakburn-bg))))
+   `(helm-buffer-process ((t (:foreground ,peakburn-cyan :background ,peakburn-bg))))
+   `(helm-buffer-saved-out ((t (:foreground ,peakburn-fg :background ,peakburn-bg))))
+   `(helm-buffer-size ((t (:foreground ,peakburn-fg-1 :background ,peakburn-bg))))
+   `(helm-ff-directory ((t (:foreground ,peakburn-cyan :background ,peakburn-bg :weight bold))))
+   `(helm-ff-file ((t (:foreground ,peakburn-fg :background ,peakburn-bg :weight normal))))
+   `(helm-ff-executable ((t (:foreground ,peakburn-green+2 :background ,peakburn-bg :weight normal))))
+   `(helm-ff-invalid-symlink ((t (:foreground ,peakburn-red :background ,peakburn-bg :weight bold))))
+   `(helm-ff-symlink ((t (:foreground ,peakburn-yellow :background ,peakburn-bg :weight bold))))
+   `(helm-ff-prefix ((t (:foreground ,peakburn-bg :background ,peakburn-yellow :weight normal))))
+   `(helm-grep-cmd-line ((t (:foreground ,peakburn-cyan :background ,peakburn-bg))))
+   `(helm-grep-file ((t (:foreground ,peakburn-fg :background ,peakburn-bg))))
+   `(helm-grep-finish ((t (:foreground ,peakburn-green+2 :background ,peakburn-bg))))
+   `(helm-grep-lineno ((t (:foreground ,peakburn-fg-1 :background ,peakburn-bg))))
+   `(helm-grep-match ((t (:foreground nil :background nil :inherit helm-match))))
+   `(helm-grep-running ((t (:foreground ,peakburn-red :background ,peakburn-bg))))
+   `(helm-moccur-buffer ((t (:foreground ,peakburn-cyan :background ,peakburn-bg))))
+   `(helm-mu-contacts-address-face ((t (:foreground ,peakburn-fg-1 :background ,peakburn-bg))))
+   `(helm-mu-contacts-name-face ((t (:foreground ,peakburn-fg :background ,peakburn-bg))))
+;;;;; helm-swoop
+   `(helm-swoop-target-line-face ((t (:foreground ,peakburn-fg :background ,peakburn-bg+1))))
+   `(helm-swoop-target-word-face ((t (:foreground ,peakburn-yellow :background ,peakburn-bg+2 :weight bold))))
 ;;;;; isearch
    `(isearch ((t (:foreground ,peakburn-yellow-2 :weight bold :background ,peakburn-bg-1))))
    `(isearch-fail ((t (:foreground ,peakburn-fg :background ,peakburn-red-4))))
@@ -324,17 +370,17 @@ Also bind `class' to ((class color) (min-colors 89))."
    `(term-color-black ((t (:foreground ,peakburn-bg
                                        :background ,peakburn-bg-1))))
    `(term-color-red ((t (:foreground ,peakburn-red-2
-                                       :background ,peakburn-red-4))))
+                                     :background ,peakburn-red-4))))
    `(term-color-green ((t (:foreground ,peakburn-green
                                        :background ,peakburn-green+2))))
    `(term-color-yellow ((t (:foreground ,peakburn-orange
-                                       :background ,peakburn-yellow))))
+                                        :background ,peakburn-yellow))))
    `(term-color-blue ((t (:foreground ,peakburn-blue-1
                                       :background ,peakburn-blue-3))))
    `(term-color-magenta ((t (:foreground ,peakburn-magenta
                                          :background ,peakburn-red))))
    `(term-color-cyan ((t (:foreground ,peakburn-cyan
-                                       :background ,peakburn-blue))))
+                                      :background ,peakburn-blue))))
    `(term-color-white ((t (:foreground ,peakburn-fg
                                        :background ,peakburn-fg-1))))
    '(term-default-fg-color ((t (:inherit term-color-white))))

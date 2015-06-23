@@ -7,13 +7,15 @@
   ;; Evil leader
   (use-package evil-leader
     :ensure t
+    :init
+    ;; Leader shortcuts in emacs state as well
+    (setq evil-leader/in-all-states 1)
     :config
     (global-evil-leader-mode)
     (evil-leader/set-leader "ö")
 
     (evil-leader/set-key
       "a" 'align-regexp
-      "m" 'imenu
       "w" 'kluge-write-whole-file
       "W" 'evil-write-all
       "h" 'kluge-horizontal-split

@@ -99,11 +99,8 @@
 ;; Haskell
 (require 'kluge-haskell)
 
-;; Ido
-(require 'kluge-ido)
-
-;; Ivy and Swiper
-(require 'kluge-ivy)
+;; Helm
+(require 'kluge-helm)
 
 ;; Org
 (require 'kluge-org)
@@ -133,16 +130,6 @@
 
 ;; Smartparens
 (require 'kluge-smartparens)
-
-;; Smex
-(use-package smex
-  :disabled t ; until it supports ivy-mode
-  :ensure t
-  :init
-  (progn
-    (smex-initialize)
-    (global-set-key (kbd "M-x") 'smex)
-    (global-set-key (kbd "M-X") 'smex-major-mode-commands)))
 
 ;; Uniquify
 (use-package uniquify
