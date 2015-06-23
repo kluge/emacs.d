@@ -80,9 +80,8 @@
   ;; Evil nerd-commenter
   (use-package evil-nerd-commenter
     :ensure t
-    :init
-    ;; Use gc as the comment operator
-    (setq evilnc-hotkey-comment-operator "gc"))
+    :config
+    (define-key evil-normal-state-map (kbd "gc") 'evilnc-comment-operator))
 
   ;; Evil matchit
   (use-package evil-matchit
