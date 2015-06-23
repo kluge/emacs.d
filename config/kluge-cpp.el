@@ -1,7 +1,11 @@
 (use-package cc-mode
   :config
   (setq c-default-style "bsd")
-  (setq-default c-basic-offset 4))
+  (setq-default c-basic-offset 4)
+  (add-hook 'c++-mode-hook 'kluge-set-cpp-indent))
+
+(defun kluge-set-cpp-indent ()
+  (c-set-offset 'innamespace [0]))
 
 (use-package cmake-mode
   :ensure t

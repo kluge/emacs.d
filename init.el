@@ -11,7 +11,7 @@
 (add-to-list 'default-frame-alist '(width . 120))
 
 ;; Set font size
-(if (eq system-type 'windows-nt)
+(if (or (eq system-type 'windows-nt) (file-exists-p "~/.emacs.d/big-text"))
     (set-face-attribute 'default nil :height 100)
   (set-face-attribute 'default nil :height 85))
 

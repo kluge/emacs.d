@@ -15,9 +15,10 @@
   (define-key company-active-map (kbd "C-l") 'company-show-location)
 
   (global-company-mode 1)
-  (use-package company-quickhelp
-    :ensure t
-    :config
-    (company-quickhelp-mode 1)))
+  (unless (version< emacs-version "24.4")
+    (use-package company-quickhelp
+      :ensure t
+      :config
+      (company-quickhelp-mode 1))))
 
 (provide 'kluge-company)
