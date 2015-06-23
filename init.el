@@ -81,6 +81,9 @@
 ;; C++
 (require 'kluge-cpp)
 
+;; Dired
+(require 'kluge-dired)
+
 ;; Emacs Lisp
 (require 'kluge-elisp)
 
