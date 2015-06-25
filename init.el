@@ -105,6 +105,13 @@
 ;; Helm
 (require 'kluge-helm)
 
+;; highlight-symbol
+(use-package highlight-symbol
+  :ensure t
+  :config
+  ;; Highlight symbol in programming modes
+  (add-hook 'prog-mode-hook 'highlight-symbol-mode))
+
 ;; Org
 (require 'kluge-org)
 

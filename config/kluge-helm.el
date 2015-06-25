@@ -5,7 +5,6 @@
   (setq helm-display-header-line nil)
 
   (global-set-key (kbd "M-x") 'helm-M-x)
-  (global-set-key (kbd "C-s") 'helm-occur)
   (define-key evil-normal-state-map (kbd "M-y") 'helm-show-kill-ring)
   (evil-leader/set-key
     "b" 'helm-buffers-list
@@ -37,5 +36,10 @@
   :ensure t
   :config
   (helm-descbinds-mode))
+
+(use-package helm-swoop
+  :ensure t
+  :init
+  (global-set-key (kbd "C-s") 'helm-swoop))
 
 (provide 'kluge-helm)

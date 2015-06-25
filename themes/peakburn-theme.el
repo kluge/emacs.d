@@ -60,6 +60,7 @@
     ("peakburn-puregreen" . "#00F000")
     ("peakburn-cyan-1"   . "#50B0D0")
     ("peakburn-cyan"     . "#80C0E0")
+    ("peakburn-darkcyan" . "#103050")
     ("peakburn-blue+2"   . "#A0D0FF")
     ("peakburn-blue+1"   . "#90C0FF")
     ("peakburn-blue"     . "#70A0F0")
@@ -287,6 +288,8 @@ Also bind `class' to ((class color) (min-colors 89))."
 ;;;;; helm-swoop
    `(helm-swoop-target-line-face ((t (:foreground ,peakburn-fg :background ,peakburn-bg+1))))
    `(helm-swoop-target-word-face ((t (:foreground ,peakburn-yellow :background ,peakburn-bg+2 :weight bold))))
+;;;;; highlight-symbol-mode
+   `(highlight-symbol-face ((t (:background ,peakburn-darkcyan))))
 ;;;;; hl-line-mode
    `(hl-line-face ((,class (:background ,peakburn-bg+1))
                    (t :weight bold)))
