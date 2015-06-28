@@ -26,7 +26,7 @@
 	   "* %?\n%U\n%i\n")
 	  ("m" "Note with link" entry (file "~/org/inbox.org")
 	   "* %?\n%U\n%i\n%a")
-	  ("j" "Journal" entry (file+datetree "~/journal/2014.org")
+	  ("j" "Journal" entry (file+datetree "~/journal/2015.org")
 	   "* %U\n%?")))
 
   ;; Habit tracking
@@ -54,7 +54,8 @@
     )
 
   (evil-leader/set-key-for-mode 'org-mode
-    "t" 'org-todo)
+    "t" 'org-todo
+    "m" 'helm-org-in-buffer-headings)
 
   ;; Normal and insert state hotkeys
   (evil-define-key 'normal org-mode-map
