@@ -8,9 +8,6 @@
   (setq org-refile-targets '((nil . (:maxlevel . 3))
 			     (org-agenda-files . (:maxlevel . 1))))
 
-  ;; Use Ido for buffer switching
-  (setq org-completion-use-ido t)
-
   ;; Indent and show less stars
   (setq org-startup-indented t)
 

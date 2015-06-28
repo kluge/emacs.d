@@ -48,10 +48,6 @@
   (define-key evil-normal-state-map (kbd "M-j") 'next-error)
   (define-key evil-normal-state-map (kbd "M-k") 'previous-error)
 
-  ;; Opening file in other window
-  ;;(evil binds to 'ffap-other-window, which is not remapped by ido)
-  (define-key evil-window-map (kbd "C-f") 'find-file-other-window)
-
   ;; Switch to buffer in other window
   (define-key evil-window-map (kbd "C-b") 'switch-to-buffer-other-window)
 

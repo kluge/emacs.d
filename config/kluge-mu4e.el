@@ -41,6 +41,9 @@
     ;; Don't keep sent message buffers around
     (setq message-kill-buffer-on-exit t)
 
+    ;; Don't use ido-completing-read
+    (setq mu4e-completing-read-function 'completing-read)
+
     ;; Emacs state in mu4e modes
     (evil-set-initial-state 'mu4e-main-mode 'emacs)
     (evil-set-initial-state 'mu4e-headers-mode 'emacs)
