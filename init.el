@@ -60,9 +60,6 @@
 ;; Ag (Silver searcher)
 (require 'kluge-ag)
 
-;; Aggressive indent
-(require 'kluge-aggressive-indent)
-
 ;; Ansi-term
 (require 'kluge-ansi-term)
 
