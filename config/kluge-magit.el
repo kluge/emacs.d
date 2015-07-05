@@ -1,7 +1,6 @@
 (use-package magit
   :ensure t
   :defer t
-  :diminish magit-auto-revert-mode
   :init
   (setq magit-last-seen-setup-instructions "1.4.0")
 
@@ -11,23 +10,52 @@
   ;; Leader keys
   (evil-leader/set-key
     "g s" 'magit-status
-    "g l" 'magit-log
+    "g l" 'magit-log-current
     "g d" 'vc-diff)
 
+  ;; Reuse windows for magit-status
+  (setq magit-status-buffer-switch-function 'switch-to-buffer)
+
   :config
-  ;; Use ivy
-  (setq magit-completing-read-function 'ivy-completing-read)
   ;; j and k for movement
-  (define-key magit-mode-map (kbd "j") 'magit-goto-next-section)
-  (define-key magit-mode-map (kbd "k") 'magit-goto-previous-section)
-  (define-key magit-status-mode-map (kbd "j") 'magit-goto-next-section) ; override jump key
-  (define-key magit-status-mode-map (kbd "k") 'magit-goto-previous-section)
-  (define-key magit-branch-manager-mode-map (kbd "k") 'magit-goto-previous-section)
-  ;; k used to be magit-discard-item
-  (define-key magit-status-mode-map (kbd "K") 'magit-discard-item)
-  (define-key magit-branch-manager-mode-map (kbd "K") 'magit-discard-item)
+  (dolist (map (list magit-mode-map magit-status-mode-map magit-diff-mode-map))
+    (define-key map (kbd "j") 'magit-section-forward))
+  (dolist (map (list magit-mode-map
+                     magit-untracked-section-map
+                     magit-branch-section-map
+                     magit-remote-section-map
+                     magit-tag-section-map
+                     magit-file-section-map
+                     magit-hunk-section-map
+                     magit-unstaged-section-map
+                     magit-staged-section-map
+                     magit-stashes-section-map
+                     magit-stash-section-map))
+    (define-key map (kbd "k") 'magit-section-backward))
+  ;; Rebind discarding commands to K
+  (define-key magit-refs-mode-map (kbd "K") 'magit-remote-remove)
+  (dolist (map (list magit-untracked-section-map
+                     magit-file-section-map
+                     magit-hunk-section-map
+                     magit-unstaged-section-map
+                     magit-staged-section-map))
+    (define-key map (kbd "K") 'magit-discard))
+  (define-key magit-branch-section-map (kbd "K") 'magit-branch-delete)
+  (define-key magit-remote-section-map (kbd "K") 'magit-remote-remove)
+  (define-key magit-tag-section-map (kbd "K") 'magit-tag-delete)
+  (define-key magit-stashes-section-map (kbd "K") 'magit-stash-clear)
+  (define-key magit-stash-section-map (kbd "K") 'magit-stash-drop)
+
+  ;; Automatically revert asynchronously
+  (setq magit-revert-buffers 0.5)
 
   ;; Start commit message window in insert state
-  (evil-set-initial-state 'git-commit-mode 'insert))
+  (add-hook 'git-commit-setup-hook 'evil-insert-state))
+
+(use-package git-rebase
+  :config
+  (define-key git-rebase-mode-map (kbd "j") 'forward-line)
+  (define-key git-rebase-mode-map (kbd "k") 'git-rebase-backward-line)
+  (define-key git-rebase-mode-map (kbd "K") 'git-rebase-kill-line))
 
 (provide 'kluge-magit)
