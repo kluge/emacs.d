@@ -24,6 +24,8 @@
 (column-number-mode 1)  ; show column number in modeline
 (global-linum-mode -1)  ; don't show line numbers
 
+(setq max-mini-window-height 0.5) ; minibuffer can be bigger if necessary
+
 ;; Behavior settings
 (setq use-dialog-box nil)
 (global-auto-revert-mode t) ; reflect changes on disc, if file is unchanged

@@ -143,6 +143,13 @@
   :init
   (setq uniquify-buffer-name-style 'reverse))
 
+;; Which-key
+(use-package which-key
+  :ensure t
+  :defer 5
+  :config
+  (which-key-mode))
+
 ;; Winner-mode
 (winner-mode 1)
 
