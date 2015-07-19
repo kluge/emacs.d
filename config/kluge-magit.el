@@ -10,7 +10,8 @@
   ;; Leader keys
   (evil-leader/set-key
     "g s" 'magit-status
-    "g l" 'magit-log-current
+    "g b" 'magit-blame
+    "g l" 'magit-log-buffer-file
     "g d" 'vc-diff)
 
   ;; Reuse windows for magit-status
@@ -45,6 +46,13 @@
   (define-key magit-tag-section-map (kbd "K") 'magit-tag-delete)
   (define-key magit-stashes-section-map (kbd "K") 'magit-stash-clear)
   (define-key magit-stash-section-map (kbd "K") 'magit-stash-drop)
+
+  ;; Blame mode
+  (define-key magit-blame-mode-map (kbd "j") 'magit-blame-next-chunk)
+  (define-key magit-blame-mode-map (kbd "k") 'magit-blame-previous-chunk)
+  (add-hook 'magit-blame-mode-hook (lambda ()
+                                     (evil-emacs-state)))
+  (advice-add 'magit-blame-quit :after 'evil-normal-state)
 
   ;; Automatically revert asynchronously
   (setq magit-revert-buffers 0.5)
