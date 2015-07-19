@@ -9,7 +9,6 @@
   (evil-leader/set-key
     "o" 'projectile-find-other-file)
 
-  ;; Use ivy
   (setq projectile-completion-system 'helm)
   (projectile-global-mode))
 
