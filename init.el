@@ -105,6 +105,7 @@
 ;; highlight-symbol
 (use-package highlight-symbol
   :ensure t
+  :diminish highlight-symbol-mode
   :config
   ;; Highlight symbol in programming modes
   (add-hook 'prog-mode-hook 'highlight-symbol-mode))
@@ -147,6 +148,7 @@
 (use-package which-key
   :ensure t
   :defer 5
+  :diminish which-key-mode
   :config
   (which-key-mode))
 
