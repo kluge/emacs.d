@@ -54,6 +54,9 @@
 ;; General settings
 (require 'kluge-settings)
 
+;; Utility functions
+(require 'kluge-utils)
+
 ;; Evil (Extensible Vi Layer)
 (require 'kluge-evil)
 
