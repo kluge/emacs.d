@@ -28,7 +28,7 @@
 ;; Set up the package system
 (require 'package)
 (add-to-list 'package-archives
-             '("melpa" . "http://melpa.milkbox.net/packages/") t)
+             '("melpa" . "http://melpa.org/packages/") t)
 (setq package-enable-at-startup nil) ; don't run package-initialize again after loading init.el
 (package-initialize)
 
