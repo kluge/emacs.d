@@ -4,6 +4,9 @@
 ;; Put all auto-save files to /tmp
 (setq auto-save-file-name-transforms
           `((".*" ,temporary-file-directory t)))
+;; Avoid loading outdated bytecompiled files
+(unless (version< emacs-version "24.4")
+  (setq load-prefer-newer t))
 
 ;; Add git to PATH on windows
 (when (eq system-type 'windows-nt)
@@ -33,6 +36,9 @@
 (setq global-auto-revert-non-file-buffers t)
 (setq auto-revert-verbose nil)
 (defalias 'yes-or-no-p 'y-or-n-p)
+
+;; Don't ask for the compilation command
+(setq compilation-read-command nil)
 
 ;; Code settings
 (set-default 'sentence-end-double-space nil) ; sentences don't need two spaces to end
