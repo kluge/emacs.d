@@ -93,8 +93,8 @@
 ;; Flycheck
 (require 'kluge-flycheck)
 
-;; Ggtags
-(require 'kluge-ggtags)
+;; Gtags (ggtags and helm-gtags)
+(require 'kluge-gtags)
 
 ;; Google this
 (require 'kluge-google-this)
