@@ -84,6 +84,9 @@
 ;; Emacs Lisp
 (require 'kluge-elisp)
 
+;; Eshell
+(require 'kluge-eshell)
+
 ;; Expand region
 (require 'kluge-expand-region)
 
