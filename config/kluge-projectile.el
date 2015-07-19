@@ -3,8 +3,8 @@
   :init
   (setq projectile-keymap-prefix (kbd "M-p"))
   :config
-  (setq projectile-enable-caching t)
-  (setq projectile-indexing-method 'alien)
+  (when (eq system-type 'windows-nt)
+    (setq projectile-enable-caching t))
 
   (evil-leader/set-key
     "o" 'projectile-find-other-file)
