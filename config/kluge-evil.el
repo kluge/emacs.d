@@ -95,10 +95,19 @@
     :ensure t
     :config
     (global-evil-jumper-mode 1))
+
+  ;; Search for visual selection with * and #
   (use-package evil-visualstar
     :ensure t
     :config
-    (global-evil-visualstar-mode 1)))
+    (global-evil-visualstar-mode 1))
+
+  ;; Text objects for arguments
+  (use-package evil-args
+    :ensure t
+    :init
+    (define-key evil-inner-text-objects-map (kbd "a") 'evil-inner-arg)
+    (define-key evil-outer-text-objects-map (kbd "a") 'evil-outer-arg)))
 
 (defun kluge-write-whole-file ()
   (interactive)
