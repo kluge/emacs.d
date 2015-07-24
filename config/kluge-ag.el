@@ -6,5 +6,8 @@
     "s" 'ag
     "ös" 'ag-regexp))
 
+(use-package wgrep-ag
+  :ensure t)
+
 
 (provide 'kluge-ag)
