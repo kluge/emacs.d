@@ -33,6 +33,14 @@
   (helm-autoresize-mode 1)
   (helm-mode 1))
 
+(use-package helm-dash
+  :if (eq system-type 'gnu/linux)
+  :ensure t
+  :defer t
+  :init
+  (evil-leader/set-key
+    "d" 'helm-dash))
+
 (use-package helm-descbinds
   :ensure t
   :config
