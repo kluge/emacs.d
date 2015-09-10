@@ -9,13 +9,8 @@
   (evil-leader/set-key
     "o" 'projectile-find-other-file)
 
-  (setq projectile-completion-system 'helm)
+  (setq projectile-completion-system 'ivy)
   (projectile-global-mode))
-
-(use-package helm-projectile
-  :ensure t
-  :config
-  (helm-projectile-on))
 
 (use-package helm-ag
   :ensure t

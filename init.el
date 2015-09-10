@@ -102,6 +102,8 @@
 ;; Google this
 (require 'kluge-google-this)
 
+(require 'kluge-ivy)
+
 ;; Haskell
 (require 'kluge-haskell)
 

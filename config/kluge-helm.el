@@ -1,16 +1,10 @@
 (use-package helm
   :ensure t
-  :diminish helm-mode
   :init
   (require 'helm-config)
   (setq helm-display-header-line nil)
 
-  (global-set-key (kbd "M-x") 'helm-M-x)
   (define-key evil-normal-state-map (kbd "M-y") 'helm-show-kill-ring)
-  (evil-leader/set-key
-    "b" 'helm-buffers-list
-    "f" 'helm-find-files
-    "m" 'helm-semantic-or-imenu)
 
   ;; Fuzzy matching
   (setq helm-buffers-fuzzy-matching t)
@@ -30,8 +24,7 @@
   (define-key helm-map (kbd "<tab>") 'helm-execute-persistent-action)
   (define-key helm-map (kbd "<backtab>") 'helm-select-action)
 
-  (helm-autoresize-mode 1)
-  (helm-mode 1))
+  (helm-autoresize-mode 1))
 
 (use-package helm-dash
   :if (eq system-type 'gnu/linux)
@@ -45,10 +38,5 @@
   :ensure t
   :config
   (helm-descbinds-mode))
-
-(use-package helm-swoop
-  :ensure t
-  :init
-  (global-set-key (kbd "C-s") 'helm-swoop))
 
 (provide 'kluge-helm)
