@@ -173,6 +173,9 @@
 
 (define-key evil-insert-state-map (kbd "<f5>") 'kluge-insert-date)
 
+;; Menu key for M-x
+(global-set-key (kbd "<apps>") 'execute-extended-command)
+
 ;; Diminish
 (use-package diminish
   :ensure t
