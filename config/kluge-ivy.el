@@ -34,7 +34,10 @@
   ;; Ignore files starting with # or .
   (setq counsel-find-file-ignore-regexp "\\(\\`[#.]\\)")
 
+  ;; Menu key for M-x on Linux and Windows
   (global-set-key (kbd "<menu>") 'counsel-M-x)
+  (global-set-key (kbd "<apps>") 'counsel-M-x)
+
   (global-set-key (kbd "M-x") 'counsel-M-x)
   (evil-leader/set-key
     "f" 'counsel-find-file))
