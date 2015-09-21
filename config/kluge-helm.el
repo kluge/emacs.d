@@ -1,5 +1,6 @@
 (use-package helm
   :ensure t
+  :defer t
   :init
   (require 'helm-config)
   (setq helm-display-header-line nil)
@@ -36,7 +37,9 @@
 
 (use-package helm-descbinds
   :ensure t
-  :config
-  (helm-descbinds-mode))
+  :commands (helm-descbinds)
+  :init
+  ;; Hack to enable this without loading helm, helm-descbinds-mode would normally do this
+  (fset 'describe-bindings #'helm-descbinds))
 
 (provide 'kluge-helm)

@@ -61,6 +61,7 @@
   (add-hook 'git-commit-setup-hook 'evil-insert-state))
 
 (use-package git-rebase
+  :defer t
   :config
   (define-key git-rebase-mode-map (kbd "j") 'forward-line)
   (define-key git-rebase-mode-map (kbd "k") 'git-rebase-backward-line)

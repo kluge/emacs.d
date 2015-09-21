@@ -1,7 +1,5 @@
 (use-package cc-mode
-  :init
-  ;; Open headers in C++, not C mode
-  (add-to-list 'auto-mode-alist '("\\.h\\'" . c++-mode))
+  :mode ("\\.h\\'" . c++-mode)
   :config
   (setq c-default-style "bsd")
   (setq-default c-basic-offset 4)
@@ -40,19 +38,23 @@
 
 (use-package company-irony
   :ensure t
+  :commands (company-irony company-irony-setup-begin-commands)
+  :init
+  (add-hook 'irony-mode-hook 'company-irony-setup-begin-commands)
   :config
   (add-to-list 'company-backends 'company-irony)
-  (setq company-backends (remq 'company-clang company-backends))
-  (add-hook 'irony-mode-hook 'company-irony-setup-begin-commands))
+  (delete-from-list 'company-backends 'company-clang))
 
 (use-package flycheck-irony
   :ensure t
-  :config
+  :commands (flycheck-irony-setup)
+  :init
   (add-hook 'flycheck-mode-hook 'flycheck-irony-setup))
 
 (use-package irony-eldoc
   :ensure t
-  :config
+  :commands (irony-eldoc)
+  :init
   (add-hook 'irony-mode-hook 'irony-eldoc))
 
 (eval-after-load 'kluge-smartparens

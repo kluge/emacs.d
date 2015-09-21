@@ -78,17 +78,17 @@
   ;; Evil nerd-commenter
   (use-package evil-nerd-commenter
     :ensure t
-    :config
+    :commands (evilnc-comment-operator)
+    :init
     (define-key evil-normal-state-map (kbd "gc") 'evilnc-comment-operator))
 
   ;; Evil matchit
   (use-package evil-matchit
     :ensure t
     :config
-    (progn
-      (defun evilmi-customize-keybinding ()
-	(define-key evil-normal-state-map "%" 'evilmi-jump-items))
-      (global-evil-matchit-mode 1)))
+    (defun evilmi-customize-keybinding ()
+      (define-key evil-normal-state-map "%" 'evilmi-jump-items))
+    (global-evil-matchit-mode 1))
 
   ;; Evil jumper (jumps between buffers)
   (use-package evil-jumper
