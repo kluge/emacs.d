@@ -3,6 +3,7 @@
   :defer t
   :init
   (setq magit-last-seen-setup-instructions "1.4.0")
+  (setq magit-push-always-verify nil) ; don't ask for which branch to push
 
   ;; Global key to invoke magit
   (global-set-key (kbd "C-c m") 'magit-status)
