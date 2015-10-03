@@ -19,7 +19,8 @@
       "w" 'kluge-write-whole-file
       "W" 'evil-write-all
       "h" 'kluge-horizontal-split
-      "v" 'kluge-vertical-split))
+      "v" 'kluge-vertical-split
+      "m" 'imenu))
 
   :config
   (evil-mode 1)   ; enable Evil
