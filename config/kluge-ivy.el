@@ -39,6 +39,9 @@
   (global-set-key (kbd "<apps>") 'counsel-M-x)
   (global-set-key (kbd "M-x") 'counsel-M-x)
 
+  ;; When smex is installed, counsel-M-x uses it for sorting
+  (use-package smex :ensure t)
+
   (define-key evil-ex-map "e " 'counsel-find-file)
   (evil-leader/set-key
     "f" 'counsel-find-file))
