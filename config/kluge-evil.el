@@ -107,7 +107,13 @@
     :ensure t
     :init
     (define-key evil-inner-text-objects-map (kbd "a") 'evil-inner-arg)
-    (define-key evil-outer-text-objects-map (kbd "a") 'evil-outer-arg)))
+    (define-key evil-outer-text-objects-map (kbd "a") 'evil-outer-arg))
+
+  (use-package evil-snipe
+    :ensure t
+    :config
+    (evil-snipe-mode 1)
+    (evil-snipe-override-mode 1)))
 
 (defun kluge-write-whole-file ()
   (interactive)
