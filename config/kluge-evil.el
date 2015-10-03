@@ -87,8 +87,6 @@
   (use-package evil-matchit
     :ensure t
     :config
-    (defun evilmi-customize-keybinding ()
-      (define-key evil-normal-state-map "%" 'evilmi-jump-items))
     (global-evil-matchit-mode 1))
 
   ;; Evil jumper (jumps between buffers)
