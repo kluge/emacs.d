@@ -134,7 +134,7 @@ Also bind `class' to ((class color) (min-colors 89))."
    `(menu ((t (:foreground ,peakburn-fg :background ,peakburn-bg))))
    `(minibuffer-prompt ((t (:foreground ,peakburn-yellow))))
    `(mode-line
-     ((,class (:foreground ,peakburn-green+1
+     ((,class (:foreground ,peakburn-cyan-1
                            :background ,peakburn-bg-1
                            :box (:line-width -1 :style released-button)))
       (t :inverse-video t)))
@@ -376,6 +376,11 @@ Also bind `class' to ((class color) (min-colors 89))."
    `(outline-6 ((t (:foreground ,peakburn-green+2))))
    `(outline-7 ((t (:foreground ,peakburn-red-4))))
    `(outline-8 ((t (:foreground ,peakburn-blue-3))))
+;;;;; powerline
+   `(powerline-active1 ((t (:background ,peakburn-bg-05 :inherit mode-line))))
+   `(powerline-active2 ((t (:background ,peakburn-bg+2 :inherit mode-line))))
+   `(powerline-inactive1 ((t (:background ,peakburn-bg+1 :inherit mode-line-inactive))))
+   `(powerline-inactive2 ((t (:background ,peakburn-bg+3 :inherit mode-line-inactive))))
 ;;;;; rainbow-delimiters
    `(rainbow-delimiters-depth-1-face ((t (:foreground ,peakburn-fg))))
    `(rainbow-delimiters-depth-2-face ((t (:foreground ,peakburn-green+2))))

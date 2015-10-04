@@ -142,13 +142,19 @@
   ;; Scala
   (require 'kluge-scala)
 
-  ;; Smart-mode-line
-  (require 'smart-mode-line)
-  (if after-init-time (sml/setup)
-    (add-hook 'after-init-hook 'sml/setup))
-
   ;; Smartparens
   (require 'kluge-smartparens)
+
+  ;; Spaceline
+  (use-package spaceline-config
+    :ensure spaceline
+    :config
+    (setq powerline-height 16)
+    (setq powerline-default-separator 'wave)
+    (spaceline-spacemacs-theme)
+    (spaceline-toggle-buffer-size-off)
+    (spaceline-toggle-buffer-encoding-off)
+    (spaceline-toggle-buffer-encoding-abbrev-off))
 
   ;; Uniquify
   (use-package uniquify
