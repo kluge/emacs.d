@@ -29,6 +29,8 @@
 
 (setq max-mini-window-height 0.5) ; minibuffer can be bigger if necessary
 
+(setq initial-scratch-message "") ; I know what *scratch* is for
+
 ;; Behavior settings
 (setq use-dialog-box nil)
 (global-auto-revert-mode t) ; reflect changes on disc, if file is unchanged
