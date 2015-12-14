@@ -17,6 +17,12 @@
 	   (getenv "PATH")))
   (add-to-list 'exec-path kluge-git-path))
 
+(when (eq system-type 'gnu/linux)
+  (let ((local-bin "~/.local/bin"))
+    (setenv "PATH"
+            (concat local-bin ";" (getenv "PATH")))
+    (add-to-list 'exec-path local-bin)))
+
 ;; Encoding
 (prefer-coding-system 'utf-8)
 
