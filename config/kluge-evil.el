@@ -56,6 +56,9 @@
   (define-key evil-normal-state-map (kbd "M-.") nil)
   (define-key evil-normal-state-map (kbd "C-,") 'evil-repeat-pop-next)
 
+  ;; Don't round to multiple of shift width when shifting
+  (setq evil-shift-round nil)
+
   ;; Restore visual selection after shifting
   (define-key evil-visual-state-map (kbd "<") 'kluge-shift-left-and-restore-visual)
   (define-key evil-visual-state-map (kbd ">") 'kluge-shift-right-and-restore-visual)
@@ -110,7 +113,7 @@
 
   (use-package evil-snipe
     :ensure t
-    :diminish evil-snipe-mode
+    :diminish evil-snipe-local-mode
     :config
     (evil-snipe-mode 1)
     (evil-snipe-override-mode 1)))
