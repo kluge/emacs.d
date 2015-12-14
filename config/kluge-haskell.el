@@ -3,25 +3,38 @@
   :commands haskell-mode
   :mode "\\.l?hs$"
   :init
-  ;; Use the newest indentation mode
-  (add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
-  (setq haskell-indentation-layout-offset 4)
-  (setq haskell-indentation-left-offset 4)
-  (setq haskell-indentation-ifte-offset 4)
-  (setq haskell-indentation-cycle-warn nil) ; don't warn about moving to leftmost position
   (setq evil-auto-indent nil) ; disable evil's indenting
 
   ;; Scan declarations for imenu
   (add-hook 'haskell-mode-hook 'turn-on-haskell-decl-scan)
 
   ;; Show type signatures in the minibuffer
-  (add-hook 'haskell-mode-hook 'turn-on-haskell-doc))
+  (add-hook 'haskell-mode-hook 'turn-on-haskell-doc)
+  ;; But not for core language
+  (setq haskell-doc-show-reserved nil)
 
-;; Use ghc-mod
-(use-package ghc
+  (add-hook 'haskell-mode-hook 'interactive-haskell-mode)
+  (evil-set-initial-state 'haskell-interactive-mode 'emacs)
+  (setq haskell-interactive-popup-errors nil)
+  (use-package haskell-interactive-mode
+    :init
+    (add-hook 'haskell-mode-hook 'interactive-haskell-mode)
+    (evil-set-initial-state 'haskell-interactive-mode 'emacs)
+    (setq haskell-interactive-popup-errors nil)
+    :config
+    (define-key haskell-interactive-mode-map (kbd "C-p") 'haskell-interactive-mode-history-previous)
+    (define-key haskell-interactive-mode-map (kbd "C-n") 'haskell-interactive-mode-history-next))
+
+  (setq haskell-process-type 'stack-ghci))
+
+(use-package flycheck-haskell
   :ensure t
-  :commands (ghc-init)
+  :commands flycheck-haskell-configure
   :init
-  (add-hook 'haskell-mode-hook 'ghc-init))
+  (add-hook 'flycheck-mode-hook 'flycheck-haskell-configure))
+
+(use-package shakespeare-mode
+  :ensure t)
+
 
 (provide 'kluge-haskell)
